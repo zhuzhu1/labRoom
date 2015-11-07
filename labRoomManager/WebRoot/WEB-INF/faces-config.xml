@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE faces-config PUBLIC "-//Sun Microsystems, Inc.//DTD JavaServer Faces Config 1.1//EN" "http://java.sun.com/dtd/web-facesconfig_1_1.dtd">
+
+<faces-config>
+	<!-- 
+		<lifecycle>
+		<phase-listener>com.stuman.web.jsf.bean.StudentPreUpdate</phase-listener>
+		</lifecycle>
+	-->
+	<!--JSF Manage Bean 配置开始 -->
+	<managed-bean>
+		<managed-bean-name>loginBean</managed-bean-name>
+		<managed-bean-class>
+			com.stuman.web.jsf.bean.LoginBean
+		</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>studentBean</managed-bean-name>
+		<managed-bean-class>
+			com.stuman.web.jsf.bean.StudentBean
+		</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>teacherBean</managed-bean-name>
+		<managed-bean-class>
+			com.stuman.web.jsf.bean.TeacherBean
+		</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+
+	<!--  managed-bean>
+		<managed-bean-name>classesBean</managed-bean-name>
+		<managed-bean-class>
+			com.stuman.web.jsf.bean.ClassesBean
+		</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+
+	<managed-bean>
+		<managed-bean-name>courseBean</managed-bean-name>
+		<managed-bean-class>
+			com.stuman.web.jsf.bean.CourseBean
+		</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	-->
+	<managed-bean>
+		<managed-bean-name>AdminBean</managed-bean-name>
+		<managed-bean-class>
+			com.stuman.web.jsf.bean.AdminBean
+		</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<!--JSF Manage Bean 配置结束 -->
+
+	<!--JSF 分发导航 配置开始 -->
+	<!--登录配置 -->
+	<navigation-rule>
+		<from-view-id>/login.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>studentLoginsuccess</from-outcome>
+			<to-view-id>/student.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>adminLoginsuccess</from-outcome>
+			<to-view-id>/admin.jsp</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>teacherLoginsuccess</from-outcome>
+			<to-view-id>/teacher.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+<!-- 学生登陆界面 -->
+	<navigation-rule>
+		<from-view-id>/student.jsp</from-view-id>
+		<navigation-case>
+			<from-action>#{studentBean.preModifyStudent}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/updateinformation.jsp</to-view-id>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-action>#{studentBean.preCheckMark}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/checkmark.jsp</to-view-id>
+		</navigation-case>
+		
+		
+		<!--  <navigation-case>
+		  
+			<from-action>#{studentBean.getCourses}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/DisplayCourse.jsp</to-view-id>
+		</navigation-case>-->
+		
+		
+	</navigation-rule>
+	<!--  
+	<navigation-rule>
+		<from-view-id>/admin.jsp</from-view-id>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/teacher.jsp</from-view-id>
+	</navigation-rule>
+-->
+	<!--学生列表配置 -->
+	<!--  
+	<navigation-rule>
+		<from-view-id>/getStudent.jsp</from-view-id>
+		<navigation-case>
+			<from-action>#{studentBean.preUpdateStudent}</from-action>
+			<from-outcome>edit</from-outcome>
+			<to-view-id>/updatestu.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+-->
+	<!--更新学生配置 -->
+	<!--  
+	<navigation-rule>
+		<from-view-id>/updatestu.jsp</from-view-id>
+		<navigation-case>
+			<from-action>#{studentBean.editStudentByAdmin}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/getStudent.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+-->
+	<!--新增学生配置 -->
+	<!--  
+	<navigation-rule>
+		<from-view-id>/addStudent.jsp</from-view-id>
+		<navigation-case>
+			<from-action>#{studentBean.addStudent}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/getStudent.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	-->
+	<!--学生选课配置 -->
+	<!--  
+	<navigation-rule>
+		<from-view-id>/DisplayCourse.jsp</from-view-id>
+		<navigation-case>
+			<from-action>#{studentBean.getCourses}</from-action>
+			<from-outcome></from-outcome>
+			<to-view-id></to-view-id>
+		</navigation-case>
+	</navigation-rule>
+-->
+	<!--新增教师 -->
+	<!--  
+	<navigation-rule>
+		<from-view-id>/addteacher.jsp</from-view-id>
+		<navigation-case>
+			<from-action>#{teacherBean.addTeacher}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/getteacher.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+-->
+	<!--教师列表 -->
+	<!--  
+	<navigation-rule>
+		<from-view-id>/getteacher.jsp</from-view-id>
+		<navigation-case>
+			<from-action>#{teacherBean.preEditTeacher}</from-action>
+			<from-outcome>edit</from-outcome>
+			<to-view-id>/updatetea.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	-->
+	<!--修改教师 -->
+	<!--  
+	<navigation-rule>
+		<from-view-id>/updatetea.jsp</from-view-id>
+		<navigation-case>
+			<from-action>#{teacherBean.editTeacher}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/getteacher.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	-->
+	<!--教师给学生打分列表--> 
+	<!--  
+	<navigation-rule>
+		<from-view-id>/markStudent.jsp</from-view-id>
+		<navigation-case>
+			<from-action>#{enrolBean.editEnrol}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/mark.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	-->
+	<!--教师打分 -->
+	<!--  
+	<navigation-rule>
+		<from-view-id>/mark.jsp</from-view-id>
+		<navigation-case>
+			<from-action>#{enrolBean.editEnrol}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/mark.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	-->
+	<!--新增课程 -->
+	<!--  
+	<navigation-rule>
+		<from-view-id>/Addcourse.jsp</from-view-id>
+		<navigation-case>
+			<from-action>#{courseBean.addCourse}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/getcourse.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+-->
+	<!--课程列表 -->
+	<!--  
+	<navigation-rule>
+		<from-view-id>/getcourse.jsp</from-view-id>
+		<navigation-case>
+			<from-action>#{courseBean.preEditCourse}</from-action>
+			<from-outcome>edit</from-outcome>
+			<to-view-id>/updatecour.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	-->
+	<!--修改课程 -->
+	<!--  
+	<navigation-rule>
+		<from-view-id>/updatecour.jsp</from-view-id>
+		<navigation-case>
+			<from-action>#{courseBean.editCourse}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/getcourse.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	-->
+	
+	
+	<!--新增班级 -->
+	<!--  
+	<navigation-rule>
+		<from-view-id>/AddClass.jsp</from-view-id>
+		<navigation-case>
+			<from-action>#{classesBean.addClasses}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/getClass.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+-->
+	<!--课程班级 -->
+	<!--  
+	<navigation-rule>
+		<from-view-id>/getClass.jsp</from-view-id>
+		<navigation-case>
+			<from-action>#{classesBean.preEditClasses}</from-action>
+			<from-outcome>edit</from-outcome>
+			<to-view-id>/updateClass.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	-->
+	<!--修改班级 -->
+	<!--  
+	<navigation-rule>
+		<from-view-id>/updateClass.jsp</from-view-id>
+		<navigation-case>
+			<from-action>#{classesBean.editClasses}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/getClass.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	-->
+	
+
+	<!--更新信息配置 -->
+	<!--  
+	<navigation-rule>
+		<from-view-id>/updateinformation.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/student.jsp</to-view-id>
+		</navigation-case>
+
+		<navigation-case>
+			<from-outcome>false</from-outcome>
+			<to-view-id>/updateinformation.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	-->
+	<!--JSF 分发导航 配置结束 -->
+
+
+</faces-config>
+

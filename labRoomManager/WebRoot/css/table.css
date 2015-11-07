@@ -1,0 +1,195 @@
+/* CSS Document */
+
+.BODY11{
+	margin: 0;
+	background: #FFFFFF;
+	font-size: 12px;
+	font-family: Tahoma;
+    overflow-y: hidden;
+}
+.TABLE_BODY
+{
+	border:solid;
+	border-color:#777777;
+	font-family:Tahoma;
+	font-size:12px;
+	border-width: 1px;
+	border-style: solid;
+	line-height: 150%;
+}
+
+.TABLE_TH
+{
+	background-color: #CCCCFF;
+	font-style: normal;
+	vertical-align: bottom;
+	text-align: left;
+	font-weight: bold;
+	font-size: 14px;
+	background-repeat: repeat-x;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 1px;
+	padding-right: 1px;
+	border:1px;
+	word-break: keep-all;/*寮哄埗涓嶆崲琛�銆佹崲琛宐reak-all*/
+}
+.TABLE_TH2
+{
+	background-color: #CCCCFF;
+	font-style: normal;
+	vertical-align: bottom;
+	text-align: left;
+	font-weight: bold;
+	font-size: 12px;
+	background-repeat: repeat-x;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	padding-left: 1px;
+	padding-right: 1px;
+	border:1px;
+	word-break: keep-all;/*寮哄埗涓嶆崲琛�銆佹崲琛宐reak-all*/
+}
+
+
+.TABLE_TR_01
+{
+	background-color: #f2faf3;
+	font-style: normal;
+	vertical-align: bottom;
+	text-align: left;
+	word-break: keep-all;/*寮哄埗涓嶆崲琛�/
+	height: 25px;
+	border:1px;
+}
+
+.TABLE_TR_02
+{
+	background-color: #ddf0fb;
+	font-style: normal;
+	vertical-align: bottom;
+	text-align: left;
+	word-break: keep-all;/*寮哄埗涓嶆崲琛�/
+	height: 25px;
+	border:1px;
+}
+
+.TABLE_TD_01
+{
+	background-color: #f2faf3;
+	font-style: normal;
+	vertical-align: bottom;
+	text-align: left;
+	word-break: keep-all;/*寮哄埗涓嶆崲琛�/
+}
+
+.TABLE_TD_02
+{
+	background-color: #ddf0fb;
+	font-style: normal;
+	vertical-align: bottom;
+	text-align: left;
+	word-break: keep-all;/*寮哄埗涓嶆崲琛�/
+}
+
+
+
+.COLOR_TABLE_TR_01
+{
+	background-color: #ddf0fb;
+	background: #ddf0fb;
+}
+.COLOR_TABLE_TR_02
+{
+	background-color: #f2faf3;
+	background: #f2faf3;
+}
+
+.COLOR_TABLE_TH
+{
+	background-color: #CCCCFF;
+	background: #CCCCFF;
+}
+.TEXT_SCALE
+{
+	text-decoration: underline;
+	text-transform: capitalize;
+}
+.TEXT_TITLE
+{
+	font-family:"瀹嬩綋";/**"妤蜂綋_GB2312";**/
+	font-size: 14px;
+	font-weight: bold;
+	background-image: url(../images/TAB_BG_UNSELECTED.jpg);
+	text-align: left;
+	background-color: #CCFFFF;
+	color: #333399;
+}
+
+.TAB_SELECTED
+{
+	font-family:"瀹嬩綋";/**"妤蜂綋_GB2312";**/
+	font-size: 14px;
+	font-weight: bold;
+	background: #E6EDF5;
+	color: #FF0000;
+	background-repeat: repeat-y;
+}
+
+.TAB_UNSELECTED
+{
+	font-family:"瀹嬩綋";/**"妤蜂綋_GB2312";**/
+	font-size: 14px;
+	font-weight: bold;
+	color: #0066CC;
+	background: #E6EDF5;
+	background-repeat: repeat-y;
+}
+
+.DIV_SHOW {
+	position:absolute;
+	left:50px;
+	top:150px;
+	width:900px;
+	z-index:1;
+	visibility:visible;
+	background-image: url(../images/TAB_BG_UNSELECTED.jpg);
+	display: block;
+}
+
+.DIV_HIDDEN {
+	position:absolute;
+	left:50px;
+	top:150px;
+	width:900px;
+	z-index:1;
+
+	background-image: url(../images/TAB_BG_SELECTED.jpg);
+	display: none;
+}
+.CURSOR_HAND
+{
+	cursor:pointer;
+	cursor:hand ;
+	text-transform: capitalize;
+}
+.CURSOR_NORMAL
+{
+	cursor:default;
+	text-transform: none;
+}
+
+.BUTTON_LINK
+{
+	padding: 0px 4px 0px 4px;
+	line-height: 150%;
+	background-color: #FFFFFF;
+	text-decoration: none;
+	text-align: center;
+	color: #000000;
+	font-weight: bold;
+	border: 1px solid #000000;
+	word-wrap:nowrap;
+	width:100px;
+	height: 50px;
+}

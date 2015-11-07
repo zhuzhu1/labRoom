@@ -1,0 +1,22 @@
+#
+#Thu Nov 05 20:10:59 CST 2015
+genBasicCompId=true
+sessionFactoryName=
+profile=
+daoSFId=
+version=3.1
+jndiPath=
+detectM2M=true
+reStrategyClass=
+springDaoFile=
+useJavaTypes=true
+keyGenerator=
+libInstallFolder=<no jars/zips in selected libraries>
+addLibs2Project=true
+genVersionTag=false
+sessionFactoryId=
+basePersistenceClass=
+reSettingsFile=/labRoomManager/hibernate.reveng.xml
+configFile=/labRoomManager/src/hibernate.cfg.xml
+createConfigFile=true
+addLibs2Classpath=true
