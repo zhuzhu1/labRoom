@@ -1,5 +1,7 @@
 package com.stuman.dao;
 
-public interface LabroomDAO {
+import java.util.List;
 
+public interface LabroomDAO {
+	List getLabRoom();
 }

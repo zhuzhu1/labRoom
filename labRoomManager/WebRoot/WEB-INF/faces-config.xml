@@ -48,6 +48,14 @@
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
 	
+	<managed-bean>
+		<managed-bean-name>labRoomBean</managed-bean-name>
+		<managed-bean-class>
+			com.stuman.web.jsf.bean.LabRoomBean
+		</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	
 <!-- 
 	<managed-bean>
 		<managed-bean-name>courseBean</managed-bean-name>

@@ -55,12 +55,6 @@
 				    <h:outputText value="#{labRoom.cost}"/>
 				  </h:column>
 				  
-				  <h:column>
-				   <f:facet name="header">
-				      <h:outputText value="进入"/>
-				    </f:facet>
-				    <a href="stu_computerManager.faces"><h:commandLink value="进入"/></a>
-				  </h:column>
 				  
 				</h:dataTable> 
 					</h:form>		
