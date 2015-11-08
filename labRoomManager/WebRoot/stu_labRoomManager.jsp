@@ -1,28 +1,59 @@
-<%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
-<%
-String path = request.getContextPath();
-String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-%>
+<%@page language="java" contentType="text/html; charset=utf-8"%>
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<%@ taglib uri="http://java.sun.com/jsf/core" prefix="f"%>
+<%@ taglib uri="http://java.sun.com/jsf/html" prefix="h"%>
+
 <html>
-  <head>
-    <base href="<%=basePath%>">
-    
-    <title>My JSP 'stu_labRoomManager.jsp' starting page</title>
-    
-	<meta http-equiv="pragma" content="no-cache">
-	<meta http-equiv="cache-control" content="no-cache">
-	<meta http-equiv="expires" content="0">    
-	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="This is my page">
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
+	<head>
+	<style>
+		.oddRow {background-color: gray}
+		.evenRow {background-color: lightblue}
+		</style>
+		<title>上机信息</title>
+	</head>
+ 
+	<body  background="images/image-top2.jpg" style="background-repeat:no-repeat">
 
-  </head>
-  
-  <body>
-    This is my JSP page. <br>
-  </body>
+		<center>
+			<br><br><br><br><br><br><br><br>在线模块
+		</center>
+		<div align="center">
+			<f:view>
+			<h:form>
+				<h:dataTable id="items" 
+				             value="#{rechargelistBean.rechargeLists}" 
+				             var="rechargeList"
+							 border="1"
+							 width="75%"
+				             >
+				  	  
+				  <h:column>
+				    <f:facet name="header">
+				      <h:outputText value="学号"/>
+				    </f:facet>
+				    <h:outputText value="#{rechargeList.id.stuId}"/>
+				  </h:column>
+				  
+				  <h:column>
+				     <f:facet name="header">
+				      <h:outputText value="充值金额"/>
+				    </f:facet>
+				    <h:outputText value="#{rechargeList.id.money}"/>
+				  </h:column>
+				  
+				   <h:column>
+				    <f:facet name="header">
+				      <h:outputText value="充值时间"/>
+				    </f:facet>
+				    <h:outputText value="#{rechargeList.id.rechargetime}"/>
+				  </h:column>
+	
+				</h:dataTable> 
+					</h:form>		
+    </f:view>
+		</div>
+		<p align="center">
+		</p>
+		<a href="stu_useComputer.faces">&lt;&lt;Back </a>
+	</body>
 </html>

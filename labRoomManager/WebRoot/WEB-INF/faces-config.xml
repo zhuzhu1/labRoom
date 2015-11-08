@@ -32,14 +32,23 @@
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
 
-	<!--  managed-bean>
-		<managed-bean-name>classesBean</managed-bean-name>
+	 <managed-bean>
+		<managed-bean-name>computeruseBean</managed-bean-name>
 		<managed-bean-class>
-			com.stuman.web.jsf.bean.ClassesBean
+			com.stuman.web.jsf.bean.ComputerUseBean
 		</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
-
+	
+	<managed-bean>
+		<managed-bean-name>rechargelistBean</managed-bean-name>
+		<managed-bean-class>
+			com.stuman.web.jsf.bean.RechargeListBean
+		</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	
+<!-- 
 	<managed-bean>
 		<managed-bean-name>courseBean</managed-bean-name>
 		<managed-bean-class>
@@ -77,11 +86,11 @@
 
 <!-- 学生登陆界面 -->
 	<navigation-rule>
-		<from-view-id>/student.jsp</from-view-id>
+		<from-view-id>/stu_information2.jsp</from-view-id>
 		<navigation-case>
 			<from-action>#{studentBean.preModifyStudent}</from-action>
 			<from-outcome>success</from-outcome>
-			<to-view-id>/updateinformation.jsp</to-view-id>
+			<to-view-id>/stu_passwordModify.jsp</to-view-id>
 		</navigation-case>
 		
 		<navigation-case>

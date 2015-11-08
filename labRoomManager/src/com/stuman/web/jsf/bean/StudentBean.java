@@ -62,10 +62,10 @@ public class StudentBean  {
 	}
 	
 	/**
-	 * 管理员修改学生信息
+	 * 修改密码
 	 * @return
 	 */
-	public String editStudentByAdmin(){
+	public String editPassword(){
 		
 		//获得DAO实例
 		stuDao = this.getStudentDAO();
@@ -170,7 +170,7 @@ public class StudentBean  {
 
 	private String classes;
 
-	private Double money;
+	private double money;
 
 	private java.util.Date registerTime;
 	
@@ -210,11 +210,11 @@ public class StudentBean  {
 		this.id = id;
 	}
 
-	public Double getMoney() {
+	public double getMoney() {
 		return money;
 	}
 
-	public void setMoney(Double money) {
+	public void setMoney(double money) {
 		this.money = money;
 	}
 

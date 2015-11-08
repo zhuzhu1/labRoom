@@ -9,7 +9,7 @@ import com.stuman.dao.LabroomDAO;
 import com.stuman.dao.DAOFactory;
 import com.stuman.dao.StudentDAO;
 import com.stuman.dao.TeacherDAO;
-;
+import com.stuman.dao.RechargeListDAO;
 
 public class HibernateDAOFactory extends DAOFactory {
 
@@ -52,5 +52,9 @@ public class HibernateDAOFactory extends DAOFactory {
 		// TODO Auto-generated method stub
 		return new TeacherDAOImp();
 	}
-	
+	                       
+	public RechargeListDAO createRechargeListDAO() {				//创建一个rechargelist类数据访问对象
+		// TODO Auto-generated method stub
+		return new RechargeListDAOImp();
+	}
 }

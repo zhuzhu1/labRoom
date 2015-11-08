@@ -8,7 +8,6 @@
     <class name="com.stuman.domain.Admin" table="admin">
         <id name="id" type="java.lang.String">
             <column name="id" length="32" />
-            <!-- 主键 -->
             <generator class="assigned" />
         </id>
         <property name="name" type="java.lang.String">

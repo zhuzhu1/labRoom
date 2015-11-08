@@ -16,9 +16,9 @@
             <key-property name="roomId" type="java.lang.String">
                 <column name="roomId" length="32" />
             </key-property>
-			<key-property name="stuNumber" type="java.lang.String">
-            	<column name="stuNumber" length="32" />
-        	</key-property>
+            <key-property name="stuNumber" type="java.lang.String">
+                <column name="stuNumber" length="32" />
+            </key-property>
         </composite-id>
         <many-to-one name="course" class="com.stuman.domain.Course" update="false" insert="false" fetch="select">
             <column name="courseId" length="32" not-null="true" />

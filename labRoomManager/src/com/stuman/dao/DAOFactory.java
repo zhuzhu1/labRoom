@@ -47,5 +47,5 @@ public abstract class DAOFactory {
 	public abstract LabroomDAO createLabroomDAO();
 	public abstract StudentDAO createStudentDAO();
 	public abstract TeacherDAO createTeacherDAO();
-
+	public abstract RechargeListDAO createRechargeListDAO();
 }

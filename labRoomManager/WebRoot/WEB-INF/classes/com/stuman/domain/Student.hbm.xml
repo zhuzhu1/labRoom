@@ -28,12 +28,16 @@
         <property name="registerTime" type="java.util.Date">
             <column name="registerTime" length="0" />
         </property>
-        <!-- 设置关联关系 -->
+        <set name="rechargelists" inverse="true">
+            <key>
+                <column name="stuId" length="32" not-null="true" />
+            </key>
+            <one-to-many class="com.stuman.domain.Rechargelist" />
+        </set>
         <set name="computeruses" inverse="true">
             <key>
                 <column name="stuId" length="32" not-null="true" />
             </key>
-            <!-- 一对多映射 -->
             <one-to-many class="com.stuman.domain.Computeruse" />
         </set>
     </class>

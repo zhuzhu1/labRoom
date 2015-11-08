@@ -1,4 +1,5 @@
 <%@page language="java" contentType="text/html; charset=utf-8"%>
+
 <%@ taglib uri="http://java.sun.com/jsf/core" prefix="f"%>
 <%@ taglib uri="http://java.sun.com/jsf/html" prefix="h"%>
 
@@ -22,10 +23,10 @@
 */
 			%>
 		<center>
-			<br><br><br><br><br><br><br><br>所有学生
+			<br><br><br><br><br><br><br><br>基本信息
 		</center>
 		<p align=right>
-			<a href="addstudent.faces">新加学生</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<a href="stu_passwordModify.faces">密码修改</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		</p>
 		<div align="center">
 			<f:view>
@@ -38,7 +39,7 @@
 				             >
 				  <h:column>
 				    <f:facet name="header">
-				      <h:outputText value="学生"/>
+				      <h:outputText value="学号"/>
 				    </f:facet>
 				    <h:outputText value="#{student.id}"/>
 				  </h:column>
@@ -50,67 +51,32 @@
 				    <h:outputText value="#{student.name}"/>
 				  </h:column>
 				  
-				   <h:column>
-				     <f:facet name="header">
-				      <h:outputText value="密码"/>
-				    </f:facet>
-				    <h:outputText value="#{student.password}"/>
-				  </h:column>
-				  
 				  <h:column>
 				     <f:facet name="header">
-				      <h:outputText value="籍贯"/>
+				      <h:outputText value="院系编号"/>
 				    </f:facet>
-				    <h:outputText value="#{student.jiguan}"/>
+				    <h:outputText value="#{student.departmentId}"/>
 				  </h:column>
 				  
 				   <h:column>
 				    <f:facet name="header">
-				      <h:outputText value="系别"/>
+				      <h:outputText value="班级"/>
 				    </f:facet>
-				    <h:outputText value="#{student.department}"/>
+				    <h:outputText value="#{student.classes}"/>
 				  </h:column>
 				  
 				   <h:column>
 				    <f:facet name="header">
-				      <h:outputText value="性别"/>
+				      <h:outputText value="账户余额"/>
 				    </f:facet>
-				    <h:outputText value="#{student.sex}"/>
-				  </h:column>
-				  
-				   <h:column>
-				     <f:facet name="header">
-				      <h:outputText value="学分"/>
-				    </f:facet>
-				    <h:outputText value="#{student.mark}"/>
+				    <h:outputText value="#{student.money}"/>
 				  </h:column>
 				
 				  <h:column>
 				    <f:facet name="header">
-				      <h:outputText value="电话"/>
+				      <h:outputText value="注册时间"/>
 				    </f:facet>
-				    <h:outputText value="#{student.tel}"/>
-				  </h:column>
-		
-			    <h:column>
-			       <f:facet name="header">
-				      <h:outputText value="E-mail"/>
-				    </f:facet>
-				    <h:outputText value="#{student.email}"/>
-				  </h:column>
-				
-				<h:column>
-				   <f:facet name="header">
-				      <h:outputText value="删除"/>
-				    </f:facet>
-				    <h:commandLink value="删除" action="#{studentBean.delStudent}"/>
-				  </h:column>
-	
-			    <h:column>
-			        <f:facet name="header">
-				      <h:outputText value="更新"/>
-				    </f:facet>
-				    <h:commandLink value="更新" action="#{studentBean.preUpdateStudent}"/>
+				    <h:outputText value="#{student.registerTime}"/>
 				  </h:column>
 	
 				</h:dataTable> 
@@ -119,6 +85,6 @@
 		</div>
 		<p align="center">
 		</p>
-		<a href="admin.faces">&lt;&lt;Back </a>
+		<a href="student.faces">&lt;&lt;Back </a>
 	</body>
 </html>

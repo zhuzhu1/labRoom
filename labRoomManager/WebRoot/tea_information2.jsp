@@ -25,7 +25,7 @@
 			<br><br><br><br><br><br><br><br>所有学生
 		</center>
 		<p align=right>
-			<a href="addstudent.faces">新加学生</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<a href="addstudent.faces">修改密码</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		</p>
 		<div align="center">
 			<f:view>
@@ -62,20 +62,6 @@
 				      <h:outputText value="注册时间"/>
 				    </f:facet>
 				    <h:outputText value="#{teacher.registerTime}"/>
-				  </h:column>
-				
-				<h:column>
-				   <f:facet name="header">
-				      <h:outputText value="删除"/>
-				    </f:facet>
-				    <h:commandLink value="删除" action="#{studentBean.delStudent}"/>
-				  </h:column>
-	
-			    <h:column>
-			        <f:facet name="header">
-				      <h:outputText value="更新"/>
-				    </f:facet>
-				    <h:commandLink value="更新" action="#{studentBean.preUpdateStudent}"/>
 				  </h:column>
 	
 				</h:dataTable> 

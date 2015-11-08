@@ -25,8 +25,8 @@ public class Admin implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public Admin(String name, String password) {
-		this.name = name;
+	public Admin(String id, String password) {
+		this.id = id;
 		this.password = password;
 	}
 
