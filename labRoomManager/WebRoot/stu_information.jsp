@@ -25,14 +25,13 @@
 		<center>
 			<br><br><br><br><br><br><br><br>基本信息
 		</center>
-		<p align=right>
-			<!--  a href="stu_passwordModify.faces">密码修改</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
-			
-		</p>
+
 		<div align="center">
 			<f:view>
 			<h:form>
+			<p align=right>
 			   <h:commandLink value="密码修改" action="#{studentBean.preModifyStudent}"/>
+			</p>
 				<h:dataTable id="items" 
 				             value="#{studentBean.students}" 
 				             var="student"
@@ -87,6 +86,6 @@
 		</div>
 		<p align="center">
 		</p>
-		<a href="student.faces">&lt;&lt;Back </a>
+		<a href="stu_userManager.faces">&lt;&lt;Back </a>
 	</body>
 </html>

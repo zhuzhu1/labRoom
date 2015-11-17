@@ -41,16 +41,25 @@ public class LoginBean {
 		ExternalContext ec = context.getExternalContext(); 
 		HttpSession session = (HttpSession) ec.getSession(true); 
 		
-		FacesMessage msg2 = null;
-		
 		//获得下拉的登陆类型
 		String sort = getSort();
 		String username = getUsername();
 		String password = getPassword();
-		if(password == "")
+		
+		if(sort == null || sort == "")
 		{
-			msg2 = Utils.getErrMsg("请输入密码");
-			context.addMessage("password", msg2);
+			session.setAttribute("msg", "请选择用户类型");
+			return null;
+		}
+		if(username == null || username == "")
+		{
+			session.setAttribute("msg", "请输入用户名");
+			return null;
+		}
+		if(password == null || password == "")
+		{
+			session.setAttribute("msg", "请输入密码");
+			return null;
 		}
 		int loginSort = Integer.parseInt(sort);
 
@@ -104,7 +113,7 @@ public class LoginBean {
 			s.close();
 		}
 		//msg="登陆失败";
-		session.setAttribute("msg", "failed");
+		session.setAttribute("msg", "用户名或密码错误");
 		return null;
 	}
 

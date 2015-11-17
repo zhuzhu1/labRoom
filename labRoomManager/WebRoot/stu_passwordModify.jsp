@@ -28,7 +28,7 @@
 						确认密码
 					</td>
 					<td>
-						<h:inputSecret id="password1" value="#{studentBean.student.password}" />
+						<h:inputSecret id="password1" value="#{studentBean.password}" />
 					</td>
 				</tr>
 				
@@ -36,6 +36,13 @@
 			<p align="center">
 				<h:commandButton action="#{studentBean.editPassword}" id="Submit" value="提交"/>
 			</p>
+			<% 
+				String msg = (String)session.getAttribute("msg");
+				if(msg != null && msg != "")
+				{
+					out.print(msg);   
+				}                         
+			%>
 		</h:form>
 		<p>
 			<a href="stu_information.faces">&lt;&lt;Back</a>

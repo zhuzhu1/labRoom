@@ -9,33 +9,6 @@
 	<title>login</title>
      <link href="css/homepage.css" rel="stylesheet" type="text/css">
 </head>
-<script type="text/javascript">
-	function CheckForm()
-	{
-		
-		var oName = document.getElementById('ousername');
-		var oPassword = document.getElementById("opassword");
-		if(oName.value.length == 0)
-		{
-			alert("请输入用户名称!");
-			oName.focus();
-			return false;
-		}
-		
-		if(oPassword.value == "")
-		{
-			alert("请输入用户密码!");
-			oPassword.focus();
-			return false;
-		}
-		return true;
-	}
-	function RefreshValidateImg(sValidateImgId)
-	{
-		document.getElementById(sValidateImgId).src = "ValidateCode.jsp?TimeCode=" + Math.random() + "100";
-	}
-</script>
-
 
 <body>
 <f:view>
@@ -72,48 +45,49 @@
 							<label>
 								用户
 							</label>
-								<h:inputText id="ousername" value="#{loginBean.username}" required="true">
-							         <f:validateLength minimum="1"></f:validateLength>  
-							    </h:inputText>
-							    <h:message for="ousername"></h:message>  
-<br />
+							<br />
+							<h:inputText id="ousername" value="#{loginBean.username}" />
+                            <br />
 			  				<label>
 								密码
 							</label>
-							<h:inputSecret id="opassword" value="#{loginBean.password}" required="true" />
-
+							<br />
+							<h:inputSecret id="opassword" value="#{loginBean.password}" /> 
+							<br />
 							<br />
 							<h:commandButton action="#{loginBean.login}" value="登录"/>
 							<br/>
-							
+							<br/>
+							<% 
+							String msg = (String)session.getAttribute("msg");
+							if(msg != null && msg != "")
+							{
+								out.print(msg);   
+							}                         
+							 %>
 							</form>
 						</div>
-						
+
 												
 						<div id="News">							
 							<ul>
 								<label style="color: red;font-size: 12px;">教师登录：</label>
 								<li>
-									 用户名为工资号，初始密码为工资号，请及时更改密码。
+									 用户名为工号，初始密码为工号，请及时更改密码。
 								</li>
-<li>
-									 可进入帮助了解如何使用本系统。
-								</li>
+                                
 								<br/>
-                                                                <label style="color: red;font-size: 12px;">新生登陆：</label>
+                                <label style="color: red;font-size: 12px;">学生登陆：</label>
 								<li>
-									 用户名为学号，初始密码为录取号的<strong>后6位</strong>（或学号）。
+									 用户名为学号，初始密码为学号的<strong>后6位</strong>。
 								</li>
 								<br/>
 								<label style="color: red;font-size: 12px;">新生登录注意事项：</label>
 								<li>
-									 1. 请初次登录后进入【个人信息】核对您的基本信息。
+									 请初次登录后进入【个人信息】核对您的基本信息。
 								</li>
 								<li>
-									 2. 如果出生日期或身份证号有误请及时与辅导员联系。
-								</li>
-								<li>
-									 3. 请填写个人联系方式，便于与您及时联系，谢谢。
+									 可进入帮助了解如何使用本系统。
 								</li>
 							</ul>
 						</div>
@@ -130,10 +104,6 @@
 		
 	</h:form>
 	</f:view>
-	<%
-String msg = (String)session.getAttribute("msg");
-out.print(msg);                            
-%>
 </body>
 
 </html>

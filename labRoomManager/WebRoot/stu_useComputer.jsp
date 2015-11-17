@@ -27,6 +27,7 @@
     <ul>
 	    <li id="studentinfo"><a href="stu_online.faces"><img src="images/personal.png"><br />在线模块</a></li>
 	    <li id="teachinginfo"><a href="stu_history.faces"><img src="images/achievement.png"><br />历史模块</a></li>
+	    <li id="teachinginfo"><a href="stu_help.faces"><img src="images/achievement.png"><br />使用帮助</a></li>
 	</ul>
 </div>
 <div class="Line"></div>

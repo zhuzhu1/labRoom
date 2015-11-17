@@ -10,10 +10,12 @@ import javax.faces.model.ListDataModel;
 import javax.servlet.http.HttpSession;
 
 import org.apache.commons.beanutils.BeanUtils;
+import org.hibernate.Session;
 
 import com.stuman.dao.CourseDAO;
 import com.stuman.dao.DAOFactory;
 import com.stuman.dao.StudentDAO;
+import com.stuman.dao.hibernate.HibernateUtil;
 import com.stuman.domain.Course;
 import com.stuman.domain.Student;
 import com.stuman.dto.CourseDto;
@@ -66,12 +68,21 @@ public class StudentBean  {
 	 * @return
 	 */
 	public String editPassword(){
-		
+
+        //JSF获取session
+		FacesContext context = FacesContext.getCurrentInstance(); 
+		ExternalContext ec = context.getExternalContext(); 
+		HttpSession session = (HttpSession) ec.getSession(true); 
 		//获得DAO实例
 		stuDao = this.getStudentDAO();
-		
+		if(this.password == "" || this.student.getPassword() == "" || !this.password.equals(this.student.getPassword()))
+		{
+			session.setAttribute("msg", "密码为空，两次输入密码不一样！");
+			return null;
+		}
 		if(stuDao.updateStudent(getStudent())){
-			return "success";
+			session.setAttribute("msg", "密码修改成功！");
+			return null;
 		}	
 		
 		return null;

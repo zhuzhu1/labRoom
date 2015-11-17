@@ -101,14 +101,15 @@
 			<to-view-id>/stu_passwordModify.jsp</to-view-id>
 		</navigation-case>
 	</navigation-rule>
-	<navigation-rule>
+	
+	<!-- navigation-rule>
 		<from-view-id>/stu_passwordModify.jsp</from-view-id>
 		<navigation-case>
 			<from-action>#{studentBean.editPassword}</from-action>
 			<from-outcome>success</from-outcome>
 			<to-view-id>/stu_information.jsp</to-view-id>
 		</navigation-case>
-	</navigation-rule>
+	</navigation-rule -->
 		
 		<!--  <navigation-case>
 		  

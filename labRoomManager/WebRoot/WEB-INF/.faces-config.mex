@@ -5,9 +5,8 @@
   <JSFFlowResource path="/student.jsp" location="300,20" dimension="116,36" />
   <JSFFlowResource path="/admin.jsp" location="300,120" dimension="104,36" />
   <JSFFlowResource path="/teacher.jsp" location="300,200" dimension="116,36" />
-  <JSFFlowResource path="/stu_information2.jsp" location="480,130" dimension="165,36" />
+  <JSFFlowResource path="/stu_information.jsp" location="480,130" dimension="158,36" />
   <JSFFlowResource path="/stu_passwordModify.jsp" location="480,230" dimension="189,36" />
-  <JSFFlowResource path="/checkmark.jsp" location="30,230" dimension="128,36" />
   <JSFFlowNavigationCase id="/login.jsp,/student.jsp,studentLoginsuccess,null" routingType="0">
     <AutomaticBendpoints>
       <AbsolutePoint location="112,120" />
@@ -28,17 +27,16 @@
       <AbsolutePoint location="300,218" />
     </AutomaticBendpoints>
   </JSFFlowNavigationCase>
-  <JSFFlowNavigationCase id="/stu_information2.jsp,/stu_passwordModify.jsp,success,#{studentBean.preModifyStudent}" routingType="0">
+  <JSFFlowNavigationCase id="/stu_information.jsp,/stu_passwordModify.jsp,success,#{studentBean.preModifyStudent}" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="562,166" />
-      <AbsolutePoint location="562,230" />
+      <AbsolutePoint location="559,166" />
+      <AbsolutePoint location="559,230" />
     </AutomaticBendpoints>
   </JSFFlowNavigationCase>
-  <JSFFlowNavigationCase id="/stu_information2.jsp,/checkmark.jsp,success,#{studentBean.preCheckMark}" routingType="0">
+  <JSFFlowNavigationCase id="/stu_passwordModify.jsp,/stu_information.jsp,success,#{studentBean.editPassword}" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="480,163" />
-      <AbsolutePoint location="94,163" />
-      <AbsolutePoint location="94,230" />
+      <AbsolutePoint location="574,230" />
+      <AbsolutePoint location="574,166" />
     </AutomaticBendpoints>
   </JSFFlowNavigationCase>
 </JSFFlowViewLayout>
