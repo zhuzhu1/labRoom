@@ -28,7 +28,7 @@
 						确认密码
 					</td>
 					<td>
-						<h:inputSecret id="password1" value="#{studentBean.password}" />
+						<h:inputSecret id="password1" value="#{studentBean.student.password}" />
 					</td>
 				</tr>
 				
@@ -38,7 +38,7 @@
 			</p>
 		</h:form>
 		<p>
-			<a href="student.faces">&lt;&lt;Back</a>
+			<a href="stu_information.faces">&lt;&lt;Back</a>
 		</p>
 		</f:view>
 	</body>

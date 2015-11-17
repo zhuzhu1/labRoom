@@ -1,5 +1,6 @@
 package com.stuman.web.jsf.bean;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
@@ -40,10 +41,17 @@ public class LoginBean {
 		ExternalContext ec = context.getExternalContext(); 
 		HttpSession session = (HttpSession) ec.getSession(true); 
 		
+		FacesMessage msg2 = null;
+		
 		//获得下拉的登陆类型
 		String sort = getSort();
 		String username = getUsername();
 		String password = getPassword();
+		if(password == "")
+		{
+			msg2 = Utils.getErrMsg("请输入密码");
+			context.addMessage("password", msg2);
+		}
 		int loginSort = Integer.parseInt(sort);
 
 		String[] userlist = new String[2];
@@ -95,7 +103,8 @@ public class LoginBean {
 		} finally {
 			s.close();
 		}
-		msg="登陆失败";
+		//msg="登陆失败";
+		session.setAttribute("msg", "failed");
 		return null;
 	}
 

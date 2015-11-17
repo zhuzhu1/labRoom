@@ -94,19 +94,21 @@
 
 <!-- 学生登陆界面 -->
 	<navigation-rule>
-		<from-view-id>/stu_information2.jsp</from-view-id>
+		<from-view-id>/stu_information.jsp</from-view-id>
 		<navigation-case>
 			<from-action>#{studentBean.preModifyStudent}</from-action>
 			<from-outcome>success</from-outcome>
 			<to-view-id>/stu_passwordModify.jsp</to-view-id>
 		</navigation-case>
-		
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/stu_passwordModify.jsp</from-view-id>
 		<navigation-case>
-			<from-action>#{studentBean.preCheckMark}</from-action>
+			<from-action>#{studentBean.editPassword}</from-action>
 			<from-outcome>success</from-outcome>
-			<to-view-id>/checkmark.jsp</to-view-id>
+			<to-view-id>/stu_information.jsp</to-view-id>
 		</navigation-case>
-		
+	</navigation-rule>
 		
 		<!--  <navigation-case>
 		  
@@ -115,8 +117,6 @@
 			<to-view-id>/DisplayCourse.jsp</to-view-id>
 		</navigation-case>-->
 		
-		
-	</navigation-rule>
 	<!--  
 	<navigation-rule>
 		<from-view-id>/admin.jsp</from-view-id>

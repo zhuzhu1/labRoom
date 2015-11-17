@@ -12,15 +12,16 @@
 <script type="text/javascript">
 	function CheckForm()
 	{
-		var ssValidateCode = "null";
-		var oName = document.getElementById("username");
+		
+		var oName = document.getElementById('ousername');
+		var oPassword = document.getElementById("opassword");
 		if(oName.value.length == 0)
 		{
 			alert("请输入用户名称!");
 			oName.focus();
 			return false;
 		}
-		var oPassword = document.getElementById("password");
+		
 		if(oPassword.value == "")
 		{
 			alert("请输入用户密码!");
@@ -34,6 +35,8 @@
 		document.getElementById(sValidateImgId).src = "ValidateCode.jsp?TimeCode=" + Math.random() + "100";
 	}
 </script>
+
+
 <body>
 <f:view>
 	<h:form style="height: 510px; ">
@@ -56,7 +59,7 @@
 					<div id="Login" >
 						<font style="font-size: 12px;font-weight:bold;color: #FF0000"></font><br>
 
-						<form method="post" action="login.do" onsubmit="JavaScript: return CheckForm();" >
+						<form method="post" action="login" onsubmit="JavaScript: return CheckForm();" >
 <label>
 								用户类型
 							</label>
@@ -69,20 +72,24 @@
 							<label>
 								用户
 							</label>
-								<h:inputText value="#{loginBean.username}" required="true" />
-									
+								<h:inputText id="ousername" value="#{loginBean.username}" required="true">
+							         <f:validateLength minimum="1"></f:validateLength>  
+							    </h:inputText>
+							    <h:message for="ousername"></h:message>  
 <br />
 			  				<label>
 								密码
 							</label>
-							<h:inputSecret id="password" value="#{loginBean.password}" required="true" />
-							
+							<h:inputSecret id="opassword" value="#{loginBean.password}" required="true" />
+
 							<br />
-							<h:commandButton action="#{loginBean.login}" value="登录" />
+							<h:commandButton action="#{loginBean.login}" value="登录"/>
 							<br/>
 							
 							</form>
-						</div>						
+						</div>
+						
+												
 						<div id="News">							
 							<ul>
 								<label style="color: red;font-size: 12px;">教师登录：</label>
@@ -120,7 +127,13 @@
 				</tr>
 			</table>
 		</div>
+		
 	</h:form>
 	</f:view>
+	<%
+String msg = (String)session.getAttribute("msg");
+out.print(msg);                            
+%>
 </body>
+
 </html>
