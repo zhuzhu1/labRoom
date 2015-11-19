@@ -33,11 +33,5 @@
       <AbsolutePoint location="559,230" />
     </AutomaticBendpoints>
   </JSFFlowNavigationCase>
-  <JSFFlowNavigationCase id="/stu_passwordModify.jsp,/stu_information.jsp,success,#{studentBean.editPassword}" routingType="0">
-    <AutomaticBendpoints>
-      <AbsolutePoint location="574,230" />
-      <AbsolutePoint location="574,166" />
-    </AutomaticBendpoints>
-  </JSFFlowNavigationCase>
 </JSFFlowViewLayout>
 

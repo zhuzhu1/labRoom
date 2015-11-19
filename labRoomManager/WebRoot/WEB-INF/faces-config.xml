@@ -66,7 +66,7 @@
 	</managed-bean>
 	-->
 	<managed-bean>
-		<managed-bean-name>AdminBean</managed-bean-name>
+		<managed-bean-name>adminBean</managed-bean-name>
 		<managed-bean-class>
 			com.stuman.web.jsf.bean.AdminBean
 		</managed-bean-class>
@@ -99,6 +99,15 @@
 			<from-action>#{studentBean.preModifyStudent}</from-action>
 			<from-outcome>success</from-outcome>
 			<to-view-id>/stu_passwordModify.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/admin_information2.jsp</from-view-id>
+		<navigation-case>
+			<from-action>#{adminBean.preModifyAdmin}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/admin_passwordModify.jsp</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 	

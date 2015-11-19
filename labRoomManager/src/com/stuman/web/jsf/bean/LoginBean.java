@@ -98,7 +98,7 @@ public class LoginBean {
 						+ "' and admin.password ='" + password + "'";
 				System.out.println(username + "  " + password);
 				if (s.createQuery(str).list().size() > 0) {
-					session.setAttribute("id", ((Admin) s.createQuery(str)
+					session.setAttribute("adminid", ((Admin) s.createQuery(str)
 							.list().get(0)).getId());
 					s.close();
 					return "adminLoginsuccess";

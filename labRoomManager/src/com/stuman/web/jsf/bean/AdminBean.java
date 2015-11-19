@@ -14,8 +14,10 @@ import org.apache.commons.beanutils.BeanUtils;
 import com.stuman.dao.CourseDAO;
 import com.stuman.dao.DAOFactory;
 import com.stuman.dao.AdminDAO;
+import com.stuman.dao.StudentDAO;
 import com.stuman.domain.Course;
 import com.stuman.domain.Admin;
+import com.stuman.domain.Student;
 import com.stuman.dto.CourseDto;
 
 
@@ -30,7 +32,7 @@ public class AdminBean  {
 	private DataModel dataModel = new ListDataModel();
 	
 	/**
-	 * 返回学生列表
+	 * 返回管理员列表
 	 * @return
 	 */
     public DataModel getAdmins() {
@@ -41,6 +43,50 @@ public class AdminBean  {
         return dataModel;
     }
 
+    /**
+	 * 学生更新信息前读取数据
+	 * @return
+	 */
+	public String preModifyAdmin(){
+
+		//JSF获取session
+		FacesContext context = FacesContext.getCurrentInstance(); 
+		ExternalContext ec = context.getExternalContext(); 
+		HttpSession session = (HttpSession) ec.getSession(true); 
+		
+		String adm_id = (String)session.getAttribute("adminid");
+		System.out.println("admin_id = " + adm_id);
+		AdminDAO admDao = DAOFactory.getInstance().createAdminDAO();
+		Admin adm = admDao.getAdminByID(adm_id);
+		setAdmin(adm);
+		return "success";
+	}
+	
+	/**
+	 * 修改密码
+	 * @return
+	 */
+	public String editPassword(){
+
+        //JSF获取session
+		FacesContext context = FacesContext.getCurrentInstance(); 
+		ExternalContext ec = context.getExternalContext(); 
+		HttpSession session = (HttpSession) ec.getSession(true); 
+		//获得DAO实例
+		admDao = this.getAdminDAO();
+		if(this.password == "" || this.admin.getPassword() == "" || !this.password.equals(this.admin.getPassword()))
+		{
+			session.setAttribute("msg", "密码为空，两次输入密码不一样！");
+			return null;
+		}
+		if(admDao.updateAdmin(getAdmin())){
+			session.setAttribute("msg", "密码修改成功！");
+			return null;
+		}	
+		
+		return null;
+	}
+	
 	private String id;
 
 	private String name;
@@ -57,7 +103,7 @@ public class AdminBean  {
 		return admin;
 	}
 
-	public void setStudent(Admin admin) {
+	public void setAdmin(Admin admin) {
 		this.admin = admin;
 	}
 

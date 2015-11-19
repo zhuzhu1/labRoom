@@ -8,7 +8,7 @@
 </head>
 <body>
 <div id="Header">
-<div id="Logo"><a href="admin.faces"><img src="images/Logo_Student.jpg" border="0"></a></div>
+<div id="Logo"><a href="student.faces"><img src="images/Logo_Student.jpg" border="0"></a></div>
 <div id="TopLink"><img src="images/Icon_Help.gif"><a href="student/index.do#">帮助</a>&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/Icon_Exit.gif"><a href="login.faces">退出</a></div>
 <div id="UserInfo">~~欢迎您~~</div>
 <script type="text/javascript" language="javascript" src="js/prototype.js"></script>
@@ -25,9 +25,9 @@
 	﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <div id="Function">
     <ul>
-	    <li id="studentinfo"><a href="admin_userManager.faces"><img src="images/personal.png"><br />用户管理</a></li>
-	    <li id="teachinginfo"><a href="admin_labRoomManager.faces"><img src="images/achievement.png"><br />机房管理</a></li>
-	    <li id="electiveinfo"><a href="admin_courseManager.faces"><img src="images/elective.png"><br />实验课程管理</a></li>
+	    <li id="studentinfo"><a href="admin_online.faces"><img src="images/personal.png"><br />在线模块</a></li>
+	    <li id="teachinginfo"><a href="admin_history.faces"><img src="images/achievement.png"><br />历史模块</a></li>
+	    <li id="teachinginfo"><a href="admin_help.faces"><img src="images/achievement.png"><br />使用帮助</a></li>
 	</ul>
 </div>
 <div class="Line"></div>
@@ -45,8 +45,8 @@
 </table>
 </div>
   <%
-String adminid = (String)session.getAttribute("adminid");
-if(adminid==null){response.sendRedirect("login.faces");}                                 
+String stuid = (String)session.getAttribute("stuid");
+if(stuid==null){response.sendRedirect("login.faces");}                                 
 %>
 </body>
 </html>

@@ -20,7 +20,7 @@ public class AdminDAOImp implements AdminDAO {
 		try {
 			Session s = HibernateUtil.currentSession();
 			HibernateUtil.beginTransaction();
-			List results = s.createQuery("from Admin stu").list();
+			List results = s.createQuery("from Admin adm").list();
 			HibernateUtil.commitTransaction();
 			HibernateUtil.closeSession();
 			if (results != null && results.size() > 0) {
