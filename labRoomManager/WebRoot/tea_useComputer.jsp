@@ -25,9 +25,8 @@
 	﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <div id="Function">
     <ul>
-	    <li id="studentinfo"><a href="tea_userManager.faces"><img src="images/personal.png"><br />用户管理</a></li>
-	    <li id="teachinginfo"><a href="tea_labRoomManager.faces"><img src="images/achievement.png"><br />机房管理</a></li>
-	    <li id="electiveinfo"><a href="tea_courseManager.faces"><img src="images/elective.png"><br />实验课程管理</a></li>
+	    <li id="studentinfo"><a href="tea_online.faces"><img src="images/personal.png"><br />在线模块</a></li>
+	    <li id="teachinginfo"><a href="tea_history.faces"><img src="images/achievement.png"><br />历史模块</a></li>
 	</ul>
 </div>
 <div class="Line"></div>

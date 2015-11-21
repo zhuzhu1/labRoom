@@ -44,7 +44,7 @@ public class StudentBean  {
 		BeanUtils.copyProperties(stu, this);
 		
 		//调用DAO方法保存数据库
-		if (stuDao.saveStudent(getStudent())) {
+		if (stuDao.saveStudent(stu)) {
 			return "success";
 		}
 		

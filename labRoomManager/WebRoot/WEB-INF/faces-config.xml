@@ -56,7 +56,6 @@
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
 	
-<!-- 
 	<managed-bean>
 		<managed-bean-name>courseBean</managed-bean-name>
 		<managed-bean-class>
@@ -64,7 +63,15 @@
 		</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
-	-->
+	
+	<managed-bean>
+		<managed-bean-name>courseListBean</managed-bean-name>
+		<managed-bean-class>
+			com.stuman.web.jsf.bean.courseListBean
+		</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	
 	<managed-bean>
 		<managed-bean-name>adminBean</managed-bean-name>
 		<managed-bean-class>
@@ -137,6 +144,25 @@
 			<from-action>#{labRoomBean.getIn}</from-action>
 			<from-outcome>success</from-outcome>
 			<to-view-id>/admin_computerManager.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<!-- 管理员管理课程 -->
+	<navigation-rule>
+		<from-view-id>/admin_courselook.jsp</from-view-id>
+		<navigation-case>
+			<from-action>#{courseBean.preEditCourse}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/admin_updatecourse.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/admin_updatecourse.jsp</from-view-id>
+		<navigation-case>
+			<from-action>#{courseBean.editCourse}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/admin_courselook.jsp</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 	

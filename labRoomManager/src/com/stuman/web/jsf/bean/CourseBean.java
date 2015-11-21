@@ -1,54 +1,42 @@
 package com.stuman.web.jsf.bean;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.faces.context.ExternalContext;
+import javax.faces.context.FacesContext;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
+import javax.servlet.http.HttpSession;
+
+import org.apache.commons.beanutils.BeanUtils;
+import org.hibernate.Session;
 
 import com.stuman.dao.CourseDAO;
 import com.stuman.dao.DAOFactory;
+import com.stuman.dao.StudentDAO;
+import com.stuman.dao.hibernate.HibernateUtil;
 import com.stuman.domain.Course;
+import com.stuman.domain.Student;
+import com.stuman.dto.CourseDto;
 
 public class CourseBean {
-	// Fields
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 6948989625489677658L;
+	private CourseDAO couDao;
 
-	private String id;
-
-	private String name;
-
-	private Integer mark;
-
-	private String prepare;
-
-	private String dep;
-
-	private Set classeses = new HashSet(0);
-	
-	private DataModel dataModel=new ListDataModel();
-	
-	private CourseDAO stuDao;
-	
-	private Course course;
-	
-	
 	public CourseDAO getCourseDAO() {
 		return DAOFactory.getInstance().createCourseDAO();
 	}
-
+	
+	private DataModel dataModel = new ListDataModel();
 	
 	/**
 	 * 课程列表
 	 * @return
 	 */
 	public DataModel getCourses(){
-		stuDao = this.getCourseDAO();
-		dataModel.setWrappedData(stuDao.getCourse());
+		couDao = this.getCourseDAO();
+		dataModel.setWrappedData(couDao.getCourse());
 		return dataModel;
 	}
 	
@@ -59,9 +47,9 @@ public class CourseBean {
 	 */
 	public String preEditCourse(){
 		Course course=(Course) dataModel.getRowData();
-		stuDao = this.getCourseDAO();
-		setCourse(stuDao.getCourseByID(course.getId()));
-		return "edit";
+		couDao = this.getCourseDAO();
+		setCourse(couDao.getCourseByID(course.getId()));
+		return "success";
 	}
 	
 	/**
@@ -69,8 +57,8 @@ public class CourseBean {
 	 * @return
 	 */
 	public String editCourse(){
-		stuDao = this.getCourseDAO();
-		if(stuDao.updateCourse(getCourse())){
+		couDao = this.getCourseDAO();
+		if(couDao.updateCourse(getCourse())){
 			return "success";
 		}
 		return null;
@@ -81,19 +69,39 @@ public class CourseBean {
 	 * @return
 	 */
 	public String deleteCourse(){
-		stuDao = this.getCourseDAO();
+		couDao = this.getCourseDAO();
 		this.course = (Course) dataModel.getRowData();
-		if(stuDao.deleteCourseByID(course.getId())){
+		if(couDao.deleteCourseByID(course.getId())){
 			return "success";
 		}	
 		return null;
 	}
 	
+	/**
+	 * 新增课程
+	 * @return
+	 * @throws Exception
+	 */
+	public String addCourse() throws Exception{
+		//获得DAO实例
+		couDao = this.getCourseDAO();
+
+		Course cou = new Course();
+		BeanUtils.copyProperties(cou, this);
+		
+		//调用DAO方法保存数据库
+		if (couDao.saveCourse(cou)) {
+			return "success";
+		}
+		
+		return null;
+	}
 	
 	/**
 	 * 新增教师
 	 * @return
 	 */
+	/*
 	public String addCourse(){
 		stuDao = this.getCourseDAO();
 		Course stu = new Course();
@@ -109,6 +117,21 @@ public class CourseBean {
 		}
 		return null;
 	}
+*/
+	private String id;
+
+	private String name;
+
+	private Integer departmentId;
+
+	private Integer credit;
+
+	private String stuNumber;
+	private Course course;
+
+	public Course getCourse() {
+		return course;
+	}
 
 
 	public void setCourse(Course course) {
@@ -116,93 +139,56 @@ public class CourseBean {
 	}
 
 
-	public DataModel getDataModel() {
-		return dataModel;
+	public Integer getCredit() {
+		return credit;
 	}
 
 
-	public void setDataModel(DataModel dataModel) {
-		this.dataModel = dataModel;
+	public void setCredit(Integer credit) {
+		this.credit = credit;
 	}
 
 
-	public CourseDAO getStuDao() {
-		return stuDao;
+	public Integer getDepartmentId() {
+		return departmentId;
 	}
 
 
-	public void setStuDao(CourseDAO stuDao) {
-		this.stuDao = stuDao;
+	public void setDepartmentId(Integer departmentId) {
+		this.departmentId = departmentId;
 	}
 
-
-	/** default constructor */
-	public CourseBean() {
-	}
-
-	/** full constructor */
-	public CourseBean(String name, Integer mark, String prepare, String dep,
-			Set classeses) {
-		this.name = name;
-		this.mark = mark;
-		this.prepare = prepare;
-		this.dep = dep;
-		this.classeses = classeses;
-	}
-
-	// Property accessors
 
 	public String getId() {
 		return id;
 	}
 
+
 	public void setId(String id) {
 		this.id = id;
 	}
+
 
 	public String getName() {
 		return name;
 	}
 
+
 	public void setName(String name) {
 		this.name = name;
 	}
 
-	public Integer getMark() {
-		return mark;
-	}
 
-	public void setMark(Integer mark) {
-		this.mark = mark;
-	}
-
-	public String getPrepare() {
-		return prepare;
-	}
-
-	public void setPrepare(String prepare) {
-		this.prepare = prepare;
-	}
-
-	public String getDep() {
-		return dep;
-	}
-
-	public void setDep(String dep) {
-		this.dep = dep;
-	}
-
-	public Set getClasseses() {
-		return classeses;
-	}
-
-	public void setClasseses(Set classeses) {
-		this.classeses = classeses;
+	public String getStuNumber() {
+		return stuNumber;
 	}
 
 
-	public Course getCourse() {
-		return course;
+	public void setStuNumber(String stuNumber) {
+		this.stuNumber = stuNumber;
 	}
+	
+	
+	
 
 }

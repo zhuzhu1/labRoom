@@ -3,8 +3,11 @@ package com.stuman.web.jsf.bean;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.faces.context.ExternalContext;
+import javax.faces.context.FacesContext;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
+import javax.servlet.http.HttpSession;
 
 import com.stuman.dao.DAOFactory;
 import com.stuman.dao.TeacherDAO;
@@ -75,6 +78,30 @@ public class TeacherBean {
 		return dataModel;
 	}
 	
+	/**
+	 * 修改密码
+	 * @return
+	 */
+	public String editPassword(){
+
+        //JSF获取session
+		FacesContext context = FacesContext.getCurrentInstance(); 
+		ExternalContext ec = context.getExternalContext(); 
+		HttpSession session = (HttpSession) ec.getSession(true); 
+		//获得DAO实例
+		teaDao = this.getTeacherDAO();
+		if(this.password == "" || this.teacher.getPassword() == "" || !this.password.equals(this.teacher.getPassword()))
+		{
+			session.setAttribute("msg", "密码为空，两次输入密码不一样！");
+			return null;
+		}
+		if(teaDao.updateTeacher(getTeacher())){
+			session.setAttribute("msg", "密码修改成功！");
+			return null;
+		}	
+		
+		return null;
+	}
 	
 	/**
 	 * 预编辑教师

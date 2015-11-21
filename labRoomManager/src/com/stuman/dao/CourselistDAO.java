@@ -1,5 +1,7 @@
 package com.stuman.dao;
 
-public interface CourselistDAO {
+import java.util.List;
 
+public interface CourselistDAO {
+	List getCourseList();
 }
