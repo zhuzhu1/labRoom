@@ -130,6 +130,16 @@
 		</navigation-case>
 	</navigation-rule>
 	
+	<!-- 实验室进入界面 -->
+	<navigation-rule>
+		<from-view-id>/admin_labRoomManager.jsp</from-view-id>
+		<navigation-case>
+			<from-action>#{labRoomBean.getIn}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/admin_computerManager.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
 	<!-- navigation-rule>
 		<from-view-id>/stu_passwordModify.jsp</from-view-id>
 		<navigation-case>

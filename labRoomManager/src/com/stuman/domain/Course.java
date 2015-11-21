@@ -13,13 +13,13 @@ public class Course implements java.io.Serializable {
 
 	private String id;
 
-	private Teacher teacher;
-
 	private String name;
 
 	private String departmentId;
 
-	private String classes;
+	private Integer credit;
+
+	private String stuNumber;
 
 	private Set courselists = new HashSet(0);
 
@@ -30,22 +30,22 @@ public class Course implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public Course(String id, Teacher teacher, String departmentId,
-			String classes) {
+	public Course(String id, String departmentId, Integer credit,
+			String stuNumber) {
 		this.id = id;
-		this.teacher = teacher;
 		this.departmentId = departmentId;
-		this.classes = classes;
+		this.credit = credit;
+		this.stuNumber = stuNumber;
 	}
 
 	/** full constructor */
-	public Course(String id, Teacher teacher, String name, String departmentId,
-			String classes, Set courselists) {
+	public Course(String id, String name, String departmentId, Integer credit,
+			String stuNumber, Set courselists) {
 		this.id = id;
-		this.teacher = teacher;
 		this.name = name;
 		this.departmentId = departmentId;
-		this.classes = classes;
+		this.credit = credit;
+		this.stuNumber = stuNumber;
 		this.courselists = courselists;
 	}
 
@@ -57,14 +57,6 @@ public class Course implements java.io.Serializable {
 
 	public void setId(String id) {
 		this.id = id;
-	}
-
-	public Teacher getTeacher() {
-		return this.teacher;
-	}
-
-	public void setTeacher(Teacher teacher) {
-		this.teacher = teacher;
 	}
 
 	public String getName() {
@@ -83,12 +75,20 @@ public class Course implements java.io.Serializable {
 		this.departmentId = departmentId;
 	}
 
-	public String getClasses() {
-		return this.classes;
+	public Integer getCredit() {
+		return this.credit;
 	}
 
-	public void setClasses(String classes) {
-		this.classes = classes;
+	public void setCredit(Integer credit) {
+		this.credit = credit;
+	}
+
+	public String getStuNumber() {
+		return this.stuNumber;
+	}
+
+	public void setStuNumber(String stuNumber) {
+		this.stuNumber = stuNumber;
 	}
 
 	public Set getCourselists() {

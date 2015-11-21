@@ -5,8 +5,11 @@ import java.util.List;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 
+import org.apache.commons.beanutils.BeanUtils;
+
 import com.stuman.dao.DAOFactory;
 import com.stuman.dao.LabroomDAO;
+import com.stuman.domain.Student;
 
 public class LabRoomBean {
 	
@@ -36,7 +39,15 @@ public class LabRoomBean {
         return dataModel;
     }
 	
-    
+    /**
+	 * 进入某一机房
+	 * @return
+	 * @throws Exception
+	 */
+	public String getIn() throws Exception{
+		return "success";
+	}
+	
 	public String getCapacity() {
 		return capacity;
 	}

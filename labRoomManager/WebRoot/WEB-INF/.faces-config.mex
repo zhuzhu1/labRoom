@@ -9,6 +9,9 @@
   <JSFFlowResource path="/stu_passwordModify.jsp" location="480,230" dimension="189,36" />
   <JSFFlowResource path="/admin_information2.jsp" location="30,230" dimension="184,36" />
   <JSFFlowResource path="/admin_passwordModify.jsp" location="30,330" dimension="208,36" />
+  <JSFFlowResource path="/admin_information3.jsp" location="330,330" dimension="184,36" />
+  <JSFFlowResource path="/admin_updatestudent.jsp" location="30,430" dimension="194,36" />
+  <JSFFlowResource path="/admin_labRoomManager.jsp" location="330,430" dimension="216,36" />
   <JSFFlowNavigationCase id="/login.jsp,/student.jsp,studentLoginsuccess,null" routingType="0">
     <AutomaticBendpoints>
       <AbsolutePoint location="112,120" />
@@ -39,6 +42,31 @@
     <AutomaticBendpoints>
       <AbsolutePoint location="122,266" />
       <AbsolutePoint location="122,330" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id="/admin_information3.jsp,/admin_updatestudent.jsp,success,#{studentBean.adminPreUpdateStudent}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="422,366" />
+      <AbsolutePoint location="422,403" />
+      <AbsolutePoint location="127,403" />
+      <AbsolutePoint location="127,430" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id="/admin_updatestudent.jsp,/admin_information3.jsp,success,#{studentBean.adminEditStudent}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="224,448" />
+      <AbsolutePoint location="275,448" />
+      <AbsolutePoint location="275,348" />
+      <AbsolutePoint location="330,348" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id="/admin_labRoomManager.jsp,/admin_labRoomManager.jsp,success,#{studentBean.getIn}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="438,430" />
+      <AbsolutePoint location="438,373" />
+      <AbsolutePoint location="613,373" />
+      <AbsolutePoint location="613,448" />
+      <AbsolutePoint location="546,448" />
     </AutomaticBendpoints>
   </JSFFlowNavigationCase>
 </JSFFlowViewLayout>

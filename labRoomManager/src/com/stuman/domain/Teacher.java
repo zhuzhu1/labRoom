@@ -18,11 +18,11 @@ public class Teacher implements java.io.Serializable {
 
 	private String password;
 
+	private String departmentId;
+
 	private Date registerTime;
 
 	private Set courselists = new HashSet(0);
-
-	private Set courses = new HashSet(0);
 
 	// Constructors
 
@@ -31,20 +31,21 @@ public class Teacher implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public Teacher(String id, String password) {
+	public Teacher(String id, String password, String departmentId) {
 		this.id = id;
 		this.password = password;
+		this.departmentId = departmentId;
 	}
 
 	/** full constructor */
-	public Teacher(String id, String name, String password, Date registerTime,
-			Set courselists, Set courses) {
+	public Teacher(String id, String name, String password,
+			String departmentId, Date registerTime, Set courselists) {
 		this.id = id;
 		this.name = name;
 		this.password = password;
+		this.departmentId = departmentId;
 		this.registerTime = registerTime;
 		this.courselists = courselists;
-		this.courses = courses;
 	}
 
 	// Property accessors
@@ -73,6 +74,14 @@ public class Teacher implements java.io.Serializable {
 		this.password = password;
 	}
 
+	public String getDepartmentId() {
+		return this.departmentId;
+	}
+
+	public void setDepartmentId(String departmentId) {
+		this.departmentId = departmentId;
+	}
+
 	public Date getRegisterTime() {
 		return this.registerTime;
 	}
@@ -87,14 +96,6 @@ public class Teacher implements java.io.Serializable {
 
 	public void setCourselists(Set courselists) {
 		this.courselists = courselists;
-	}
-
-	public Set getCourses() {
-		return this.courses;
-	}
-
-	public void setCourses(Set courses) {
-		this.courses = courses;
 	}
 
 }

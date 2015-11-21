@@ -12,10 +12,6 @@ public class CourselistId implements java.io.Serializable {
 
 	private String courseId;
 
-	private String roomId;
-
-	private String stuNumber;
-
 	// Constructors
 
 	/** default constructor */
@@ -23,12 +19,9 @@ public class CourselistId implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public CourselistId(String teacherId, String courseId, String roomId,
-			String stuNumber) {
+	public CourselistId(String teacherId, String courseId) {
 		this.teacherId = teacherId;
 		this.courseId = courseId;
-		this.roomId = roomId;
-		this.stuNumber = stuNumber;
 	}
 
 	// Property accessors
@@ -49,22 +42,6 @@ public class CourselistId implements java.io.Serializable {
 		this.courseId = courseId;
 	}
 
-	public String getRoomId() {
-		return this.roomId;
-	}
-
-	public void setRoomId(String roomId) {
-		this.roomId = roomId;
-	}
-
-	public String getStuNumber() {
-		return this.stuNumber;
-	}
-
-	public void setStuNumber(String stuNumber) {
-		this.stuNumber = stuNumber;
-	}
-
 	public boolean equals(Object other) {
 		if ((this == other))
 			return true;
@@ -81,15 +58,7 @@ public class CourselistId implements java.io.Serializable {
 				&& ((this.getCourseId() == castOther.getCourseId()) || (this
 						.getCourseId() != null
 						&& castOther.getCourseId() != null && this
-						.getCourseId().equals(castOther.getCourseId())))
-				&& ((this.getRoomId() == castOther.getRoomId()) || (this
-						.getRoomId() != null
-						&& castOther.getRoomId() != null && this.getRoomId()
-						.equals(castOther.getRoomId())))
-				&& ((this.getStuNumber() == castOther.getStuNumber()) || (this
-						.getStuNumber() != null
-						&& castOther.getStuNumber() != null && this
-						.getStuNumber().equals(castOther.getStuNumber())));
+						.getCourseId().equals(castOther.getCourseId())));
 	}
 
 	public int hashCode() {
@@ -99,10 +68,6 @@ public class CourselistId implements java.io.Serializable {
 				+ (getTeacherId() == null ? 0 : this.getTeacherId().hashCode());
 		result = 37 * result
 				+ (getCourseId() == null ? 0 : this.getCourseId().hashCode());
-		result = 37 * result
-				+ (getRoomId() == null ? 0 : this.getRoomId().hashCode());
-		result = 37 * result
-				+ (getStuNumber() == null ? 0 : this.getStuNumber().hashCode());
 		return result;
 	}
 

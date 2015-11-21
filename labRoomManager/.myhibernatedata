@@ -1,7 +1,7 @@
 #
-#Sun Nov 08 21:39:18 CST 2015
+#Sat Nov 21 22:39:53 CST 2015
 genBasicCompId=true
-sessionFactoryName=
+sessionFactoryName=com.stuman.domain.HibernateSessionFactory
 profile=
 daoSFId=
 version=3.1

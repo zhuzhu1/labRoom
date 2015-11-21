@@ -17,11 +17,13 @@ public class Labroom implements java.io.Serializable {
 
 	private String computerNum;
 
-	private String status;
+	private String peopleNum;
 
 	private Double cost;
 
 	private Set computers = new HashSet(0);
+
+	private Set courselists = new HashSet(0);
 
 	// Constructors
 
@@ -31,23 +33,24 @@ public class Labroom implements java.io.Serializable {
 
 	/** minimal constructor */
 	public Labroom(String id, String capacity, String computerNum,
-			String status, Double cost) {
+			String peopleNum, Double cost) {
 		this.id = id;
 		this.capacity = capacity;
 		this.computerNum = computerNum;
-		this.status = status;
+		this.peopleNum = peopleNum;
 		this.cost = cost;
 	}
 
 	/** full constructor */
 	public Labroom(String id, String capacity, String computerNum,
-			String status, Double cost, Set computers) {
+			String peopleNum, Double cost, Set computers, Set courselists) {
 		this.id = id;
 		this.capacity = capacity;
 		this.computerNum = computerNum;
-		this.status = status;
+		this.peopleNum = peopleNum;
 		this.cost = cost;
 		this.computers = computers;
+		this.courselists = courselists;
 	}
 
 	// Property accessors
@@ -76,12 +79,12 @@ public class Labroom implements java.io.Serializable {
 		this.computerNum = computerNum;
 	}
 
-	public String getStatus() {
-		return this.status;
+	public String getPeopleNum() {
+		return this.peopleNum;
 	}
 
-	public void setStatus(String status) {
-		this.status = status;
+	public void setPeopleNum(String peopleNum) {
+		this.peopleNum = peopleNum;
 	}
 
 	public Double getCost() {
@@ -98,6 +101,14 @@ public class Labroom implements java.io.Serializable {
 
 	public void setComputers(Set computers) {
 		this.computers = computers;
+	}
+
+	public Set getCourselists() {
+		return this.courselists;
+	}
+
+	public void setCourselists(Set courselists) {
+		this.courselists = courselists;
 	}
 
 }

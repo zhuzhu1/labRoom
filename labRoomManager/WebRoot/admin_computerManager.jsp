@@ -9,20 +9,20 @@
 		.oddRow {background-color: gray}
 		.evenRow {background-color: lightblue}
 		</style>
-		<title>机房使用情况</title>
+		<title>电脑使用情况</title>
 	</head>
  
 	<body  background="images/image-top2.jpg" style="background-repeat:no-repeat">
 
 		<center>
-			<br><br><br><br><br><br><br><br>机房使用情况
+			<br><br><br><br><br><br><br><br>电脑使用情况
 		</center>
 		<div align="center">
 			<f:view>
 			<h:form>
 				<h:dataTable id="items" 
-				             value="#{labRoomBean.labRooms}" 
-				             var="labRoom"
+				             value="#{computeruseBean.computeruses}" 
+				             var="computeruse"
 							 border="1"
 							 width="75%"
 				             >
@@ -31,35 +31,35 @@
 				    <f:facet name="header">
 				      <h:outputText value="实验室编号"/>
 				    </f:facet>
-				    <h:outputText value="#{labRoom.id}"/>
+				    <h:outputText value="#{computeruse.id.roomId}"/>
 				  </h:column>
 				  
 				  <h:column>
 				     <f:facet name="header">
-				      <h:outputText value="容纳人数"/>
+				      <h:outputText value="电脑编号"/>
 				    </f:facet>
-				    <h:outputText value="#{labRoom.computerNum}"/>
+				    <h:outputText value="#{computeruse.id.computerId}"/>
 				  </h:column>
 				  
 				  <h:column>
 				    <f:facet name="header">
-				      <h:outputText value="状态"/>
+				      <h:outputText value="学号"/>
 				    </f:facet>
-				    <h:outputText value="#{labRoom.status}"/>
+				    <h:outputText value="#{computeruse.id.stuId}"/>
 				  </h:column>
 				  
 				  <h:column>
 				    <f:facet name="header">
-				      <h:outputText value="单价"/>
+				      <h:outputText value="上机时间"/>
 				    </f:facet>
-				    <h:outputText value="#{labRoom.cost}"/>
+				    <h:outputText value="#{computeruse.id.startTime}"/>
 				  </h:column>
 				  
-				  <h:column>
-				   <f:facet name="header">
-				      <h:outputText value="进入"/>
+				   <h:column>
+				    <f:facet name="header">
+				      <h:outputText value="时长"/>
 				    </f:facet>
-				    <h:commandLink value="进入" action="#{labRoomBean.getIn}"/>
+				    <h:outputText value="#{computeruse.id.duration}"/>
 				  </h:column>
 				  
 				</h:dataTable> 
@@ -68,6 +68,6 @@
 		</div>
 		<p align="center">
 		</p>
-		<a href="admin.faces">&lt;&lt;Back </a>
+		<a href="admin_labRoomManager.faces">&lt;&lt;Back </a>
 	</body>
 </html>
