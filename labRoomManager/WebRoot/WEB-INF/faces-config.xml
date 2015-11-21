@@ -111,6 +111,25 @@
 		</navigation-case>
 	</navigation-rule>
 	
+	<!-- 管理员管理学生界面 -->
+	<navigation-rule>
+		<from-view-id>/admin_information3.jsp</from-view-id>
+		<navigation-case>
+			<from-action>#{studentBean.adminPreUpdateStudent}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/admin_updatestudent.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/admin_updatestudent.jsp</from-view-id>
+		<navigation-case>
+			<from-action>#{studentBean.adminEditStudent}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/admin_information3.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
 	<!-- navigation-rule>
 		<from-view-id>/stu_passwordModify.jsp</from-view-id>
 		<navigation-case>

@@ -7,6 +7,8 @@
   <JSFFlowResource path="/teacher.jsp" location="300,200" dimension="116,36" />
   <JSFFlowResource path="/stu_information.jsp" location="480,130" dimension="158,36" />
   <JSFFlowResource path="/stu_passwordModify.jsp" location="480,230" dimension="189,36" />
+  <JSFFlowResource path="/admin_information2.jsp" location="30,230" dimension="184,36" />
+  <JSFFlowResource path="/admin_passwordModify.jsp" location="30,330" dimension="208,36" />
   <JSFFlowNavigationCase id="/login.jsp,/student.jsp,studentLoginsuccess,null" routingType="0">
     <AutomaticBendpoints>
       <AbsolutePoint location="112,120" />
@@ -31,6 +33,12 @@
     <AutomaticBendpoints>
       <AbsolutePoint location="559,166" />
       <AbsolutePoint location="559,230" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id="/admin_information2.jsp,/admin_passwordModify.jsp,success,#{adminBean.preModifyAdmin}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="122,266" />
+      <AbsolutePoint location="122,330" />
     </AutomaticBendpoints>
   </JSFFlowNavigationCase>
 </JSFFlowViewLayout>

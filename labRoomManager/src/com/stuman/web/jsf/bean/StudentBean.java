@@ -36,7 +36,7 @@ public class StudentBean  {
 	 * @return
 	 * @throws Exception
 	 */
-	public String addStudent() throws Exception{
+	public String adminAddStudent() throws Exception{
 		//获得DAO实例
 		stuDao = this.getStudentDAO();
 
@@ -44,7 +44,7 @@ public class StudentBean  {
 		BeanUtils.copyProperties(stu, this);
 		
 		//调用DAO方法保存数据库
-		if (stuDao.saveStudent(stu)) {
+		if (stuDao.saveStudent(getStudent())) {
 			return "success";
 		}
 		
@@ -55,12 +55,24 @@ public class StudentBean  {
 	 * 管理员更新学生前读取数据
 	 * @return
 	 */
-	public String preUpdateStudent(){
+	public String adminPreUpdateStudent(){
         this.student = (Student) dataModel.getRowData();
         StudentDAO stuDao = DAOFactory.getInstance().createStudentDAO();
 		Student stu = stuDao.getStudentByID(student.getId());
 		setStudent(stu);
-		return "edit";
+		return "success";
+	}
+	/**
+	 * 管理员更新学生
+	 * @return
+	 */
+	public String adminEditStudent(){
+		stuDao = this.getStudentDAO();
+		if(stuDao.updateStudent(getStudent())){
+			//session.setAttribute("msg", "密码修改成功！");
+			return "success";
+		}
+        return null;
 	}
 	
 	/**
@@ -91,7 +103,7 @@ public class StudentBean  {
 	 * 删除学生
 	 * @return
 	 */
-	public String delStudent(){
+	public String adminDelStudent(){
 		//获得DAO实例
 		stuDao = this.getStudentDAO();
 		this.student = (Student) dataModel.getRowData();
