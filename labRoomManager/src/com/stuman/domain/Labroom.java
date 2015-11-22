@@ -13,11 +13,11 @@ public class Labroom implements java.io.Serializable {
 
 	private String id;
 
-	private String capacity;
+	private Integer capacity;
 
-	private String computerNum;
+	private Integer computerNum;
 
-	private String peopleNum;
+	private Integer peopleNum;
 
 	private Double cost;
 
@@ -32,8 +32,8 @@ public class Labroom implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public Labroom(String id, String capacity, String computerNum,
-			String peopleNum, Double cost) {
+	public Labroom(String id, Integer capacity, Integer computerNum,
+			Integer peopleNum, Double cost) {
 		this.id = id;
 		this.capacity = capacity;
 		this.computerNum = computerNum;
@@ -42,8 +42,8 @@ public class Labroom implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public Labroom(String id, String capacity, String computerNum,
-			String peopleNum, Double cost, Set computers, Set courselists) {
+	public Labroom(String id, Integer capacity, Integer computerNum,
+			Integer peopleNum, Double cost, Set computers, Set courselists) {
 		this.id = id;
 		this.capacity = capacity;
 		this.computerNum = computerNum;
@@ -63,27 +63,27 @@ public class Labroom implements java.io.Serializable {
 		this.id = id;
 	}
 
-	public String getCapacity() {
+	public Integer getCapacity() {
 		return this.capacity;
 	}
 
-	public void setCapacity(String capacity) {
+	public void setCapacity(Integer capacity) {
 		this.capacity = capacity;
 	}
 
-	public String getComputerNum() {
+	public Integer getComputerNum() {
 		return this.computerNum;
 	}
 
-	public void setComputerNum(String computerNum) {
+	public void setComputerNum(Integer computerNum) {
 		this.computerNum = computerNum;
 	}
 
-	public String getPeopleNum() {
+	public Integer getPeopleNum() {
 		return this.peopleNum;
 	}
 
-	public void setPeopleNum(String peopleNum) {
+	public void setPeopleNum(Integer peopleNum) {
 		this.peopleNum = peopleNum;
 	}
 

@@ -1,10 +1,13 @@
 package com.stuman.web.jsf.bean;
 
+import java.util.*;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 import com.stuman.dao.CourselistDAO;
+import com.stuman.dao.LabroomDAO;
 import com.stuman.dao.DAOFactory;
 import com.stuman.domain.Courselist;
+import com.stuman.domain.Labroom;
 
 public class courseListBean {
 
@@ -12,6 +15,9 @@ public class courseListBean {
 
 	public CourselistDAO getCourselistDAO() {
 		return DAOFactory.getInstance().createCourselistDAO();
+	}
+	public LabroomDAO getLabroomDAO() {
+		return DAOFactory.getInstance().createLabroomDAO();
 	}
 	
 	private DataModel dataModel = new ListDataModel();
@@ -25,7 +31,29 @@ public class courseListBean {
 		dataModel.setWrappedData(coulistDao.getCourseList());
 		return dataModel;
 	}
+	/**
+	 * 可用机房列表
+	 * @return
+	 */
+	public List<Labroom> getLabrooms() {
+		return labrooms;
+	}
 	
+	public String checkLabroom() {
+		LabroomDAO labDao= getLabroomDAO();
+		labrooms=labDao.listlabroom();
+		return "success";
+	}
+	
+	public boolean arrangeCourse(String courseno,String labno){
+		/*SelectCourseDAO selDao=getSelectCourseDAO();
+		SelectcourseId courseid=new SelectcourseId(sno,cno); 
+		Selectcourse sltCourse = new Selectcourse(courseid,teacher);
+	
+		if(selDao.addSelectCourse(sltCourse))
+			return true;*/
+		return false;
+	}
 	
 	private String teacherId;
 	private String courseId;
@@ -33,7 +61,8 @@ public class courseListBean {
 	private String startTime;
 	private String endTime;
 	private Courselist courselist;
-
+	private List<Labroom> labrooms=new ArrayList<Labroom>();
+	
 	public String getCourseId() {
 		return courseId;
 	}

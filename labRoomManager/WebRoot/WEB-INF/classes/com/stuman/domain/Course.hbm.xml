@@ -19,8 +19,8 @@
         <property name="credit" type="java.lang.Integer">
             <column name="credit" not-null="true" />
         </property>
-        <property name="stuNumber" type="java.lang.String">
-            <column name="stuNumber" length="32" not-null="true" />
+        <property name="stuNumber" type="java.lang.Integer">
+            <column name="stuNumber" not-null="true" />
         </property>
         <set name="courselists" inverse="true">
             <key>

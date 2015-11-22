@@ -9,7 +9,7 @@
 <body>
 <div id="Header">
 <div id="Logo"><a href="student.faces"><img src="images/Logo_Student.jpg" border="0"></a></div>
-<div id="TopLink"><img src="images/Icon_Help.gif"><a href="student/index.do#">帮助</a>&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/Icon_Exit.gif"><a href="login.faces">退出</a></div>
+<div id="TopLink"><img src="images/Icon_Help.gif"><a href="stu_help.faces">帮助</a>&nbsp;&nbsp;&nbsp;&nbsp;<img src="images/Icon_Exit.gif"><a href="login.faces">退出</a></div>
 <div id="UserInfo">~~欢迎您~~</div>
 <script type="text/javascript" language="javascript" src="js/prototype.js"></script>
 <div id="Nav">

@@ -26,7 +26,7 @@
 			<br><br><br><br><br><br><br><br>基本信息
 		</center>
 
-		<div align="center">
+		<div align="center" style="width: 90%">
 			<f:view>
 			<h:form>
 			<p align=right>
@@ -36,7 +36,7 @@
 				             value="#{studentBean.students}" 
 				             var="student"
 							 border="1"
-							 width="75%"
+							 width="65%"
 				             >
 				  <h:column>
 				    <f:facet name="header">

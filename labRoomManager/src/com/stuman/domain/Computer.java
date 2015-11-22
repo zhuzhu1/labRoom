@@ -17,6 +17,8 @@ public class Computer implements java.io.Serializable {
 
 	private String status;
 
+	private String ip;
+
 	private Set computeruses = new HashSet(0);
 
 	// Constructors
@@ -26,18 +28,20 @@ public class Computer implements java.io.Serializable {
 	}
 
 	/** minimal constructor */
-	public Computer(ComputerId id, Labroom labroom, String status) {
+	public Computer(ComputerId id, Labroom labroom, String status, String ip) {
 		this.id = id;
 		this.labroom = labroom;
 		this.status = status;
+		this.ip = ip;
 	}
 
 	/** full constructor */
-	public Computer(ComputerId id, Labroom labroom, String status,
+	public Computer(ComputerId id, Labroom labroom, String status, String ip,
 			Set computeruses) {
 		this.id = id;
 		this.labroom = labroom;
 		this.status = status;
+		this.ip = ip;
 		this.computeruses = computeruses;
 	}
 
@@ -65,6 +69,14 @@ public class Computer implements java.io.Serializable {
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	public String getIp() {
+		return this.ip;
+	}
+
+	public void setIp(String ip) {
+		this.ip = ip;
 	}
 
 	public Set getComputeruses() {

@@ -20,6 +20,9 @@
         <property name="status" type="java.lang.String">
             <column name="status" length="2" not-null="true" />
         </property>
+        <property name="ip" type="java.lang.String">
+            <column name="ip" length="32" not-null="true" unique="true" />
+        </property>
         <set name="computeruses" inverse="true">
             <key>
                 <column name="roomId" length="32" not-null="true" />

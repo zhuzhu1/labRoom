@@ -9,11 +9,15 @@ import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 
+import com.stuman.dao.DAOFactory;
+import com.stuman.dao.StudentDAO;
+import com.stuman.dao.ComputerDAO;
 import com.stuman.dao.hibernate.HibernateUtil;
 import com.stuman.domain.Admin;
 import com.stuman.domain.Student;
+import com.stuman.domain.Computer;
 import com.stuman.domain.Teacher;
-
+import java.net.*;
 
 public class LoginBean {
 
@@ -30,6 +34,8 @@ public class LoginBean {
 
 	/** username property */
 	private String username;
+	
+	private String localip;
 
 	// --------------------------------------------------------- Methods
 	public String login(){
@@ -66,19 +72,36 @@ public class LoginBean {
 		String[] userlist = new String[2];
 		userlist[0] = username;
 		userlist[1] = password;
-
+		//得到本机IP
+		InetAddress ia=null;
+		try {
+			ia=ia.getLocalHost();
+			localip=ia.getHostAddress();
+			System.out.println("本机的ip是 ："+localip);
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		try {
 			HibernateUtil.beginTransaction();
 			String str = new String();
+			String strip = new String();
+			strip = " from Computer as com where com.ip=:comIp";
+			
 			switch (loginSort) {
 			case 1:
 				str = " from Student as stu where stu.name=:stuName and stu.password=:stuPassword";
 				Query query = s.createQuery(str);
+				
 				System.out.println(username + "  " + password);
 				query.setString("stuName", username);
 				query.setString("stuPassword", password);
 				if (query.list().size() > 0) {
 					session.setAttribute("stuid", ((Student) query.list().get(0)).getId());
+					//根据IP，将电脑置为被占用状态
+					//modifyComputer();
 					s.close();
 					return "studentLoginsuccess";
 				} else
@@ -117,6 +140,24 @@ public class LoginBean {
 		return null;
 	}
 
+	public String modifyComputer(){
+
+//		JSF获取session
+		FacesContext context = FacesContext.getCurrentInstance(); 
+		ExternalContext ec = context.getExternalContext(); 
+		HttpSession session = (HttpSession) ec.getSession(true); 
+		
+		ComputerDAO comDao = DAOFactory.getInstance().createComputerDAO();
+		Computer com = comDao.getComnputerByIP(localip);
+		com.setStatus("0");
+		if(comDao.updateComputer(com)){
+			session.setAttribute("msg", "修改状态成功！");
+			return "success";
+		}	
+		
+		return null;
+	}
+	
 	/**
 	 * Returns the password.
 	 * 

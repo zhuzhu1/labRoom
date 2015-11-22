@@ -22,8 +22,8 @@
             <key-property name="endTime" type="java.util.Date">
                 <column name="endTime" length="0" />
             </key-property>
-            <key-property name="duration" type="java.lang.String">
-                <column name="duration" length="32" />
+            <key-property name="duration" type="java.lang.Double">
+                <column name="duration" precision="10" />
             </key-property>
             <key-property name="cost" type="java.lang.Double">
                 <column name="cost" precision="10" />

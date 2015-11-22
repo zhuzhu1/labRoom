@@ -19,7 +19,7 @@ public class Course implements java.io.Serializable {
 
 	private Integer credit;
 
-	private String stuNumber;
+	private Integer stuNumber;
 
 	private Set courselists = new HashSet(0);
 
@@ -31,7 +31,7 @@ public class Course implements java.io.Serializable {
 
 	/** minimal constructor */
 	public Course(String id, String departmentId, Integer credit,
-			String stuNumber) {
+			Integer stuNumber) {
 		this.id = id;
 		this.departmentId = departmentId;
 		this.credit = credit;
@@ -40,7 +40,7 @@ public class Course implements java.io.Serializable {
 
 	/** full constructor */
 	public Course(String id, String name, String departmentId, Integer credit,
-			String stuNumber, Set courselists) {
+			Integer stuNumber, Set courselists) {
 		this.id = id;
 		this.name = name;
 		this.departmentId = departmentId;
@@ -83,11 +83,11 @@ public class Course implements java.io.Serializable {
 		this.credit = credit;
 	}
 
-	public String getStuNumber() {
+	public Integer getStuNumber() {
 		return this.stuNumber;
 	}
 
-	public void setStuNumber(String stuNumber) {
+	public void setStuNumber(Integer stuNumber) {
 		this.stuNumber = stuNumber;
 	}
 

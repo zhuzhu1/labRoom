@@ -20,7 +20,7 @@ public class ComputeruseId implements java.io.Serializable {
 
 	private Date endTime;
 
-	private String duration;
+	private Double duration;
 
 	private Double cost;
 
@@ -32,7 +32,7 @@ public class ComputeruseId implements java.io.Serializable {
 
 	/** full constructor */
 	public ComputeruseId(String stuId, String roomId, String computerId,
-			Date startTime, Date endTime, String duration, Double cost) {
+			Date startTime, Date endTime, Double duration, Double cost) {
 		this.stuId = stuId;
 		this.roomId = roomId;
 		this.computerId = computerId;
@@ -84,11 +84,11 @@ public class ComputeruseId implements java.io.Serializable {
 		this.endTime = endTime;
 	}
 
-	public String getDuration() {
+	public Double getDuration() {
 		return this.duration;
 	}
 
-	public void setDuration(String duration) {
+	public void setDuration(Double duration) {
 		this.duration = duration;
 	}
 

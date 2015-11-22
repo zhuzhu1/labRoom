@@ -10,14 +10,14 @@
             <column name="id" length="32" />
             <generator class="assigned" />
         </id>
-        <property name="capacity" type="java.lang.String">
-            <column name="capacity" length="32" not-null="true" />
+        <property name="capacity" type="java.lang.Integer">
+            <column name="capacity" not-null="true" />
         </property>
-        <property name="computerNum" type="java.lang.String">
-            <column name="computerNum" length="32" not-null="true" />
+        <property name="computerNum" type="java.lang.Integer">
+            <column name="computerNum" not-null="true" />
         </property>
-        <property name="peopleNum" type="java.lang.String">
-            <column name="peopleNum" length="32" not-null="true" />
+        <property name="peopleNum" type="java.lang.Integer">
+            <column name="peopleNum" not-null="true" />
         </property>
         <property name="cost" type="java.lang.Double">
             <column name="cost" precision="10" not-null="true" />
