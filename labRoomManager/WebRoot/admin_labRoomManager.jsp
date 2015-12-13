@@ -43,13 +43,6 @@
 				  
 				  <h:column>
 				    <f:facet name="header">
-				      <h:outputText value="状态"/>
-				    </f:facet>
-				    <h:outputText value="#{labRoom.status}"/>
-				  </h:column>
-				  
-				  <h:column>
-				    <f:facet name="header">
 				      <h:outputText value="单价"/>
 				    </f:facet>
 				    <h:outputText value="#{labRoom.cost}"/>

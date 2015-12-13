@@ -10,5 +10,6 @@ import com.stuman.domain.Admin;
 
 public interface ComputeruseDAO {
 	List getComputerUse();
-	
+	List getOnlineComputerUseById(String id);
+	List getHistoryComputerUseById(String id);
 }

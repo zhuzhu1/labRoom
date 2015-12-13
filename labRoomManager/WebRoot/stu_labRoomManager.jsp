@@ -9,6 +9,7 @@
 		.oddRow {background-color: gray}
 		.evenRow {background-color: lightblue}
 		</style>
+		<link href="css/table.css" rel="stylesheet" type="text/css"> 
 		<title>上机信息</title>
 	</head>
  
@@ -23,8 +24,11 @@
 				<h:dataTable id="items" 
 				             value="#{labRoomBean.labRooms}" 
 				             var="labRoom"
-							 border="1"
-							 width="75%"
+							 styleClass="order-table"
+    						 headerClass="order-table-header"
+    						 rowClasses="order-table-odd-row,order-table-even-row"
+    						 columnClasses="list-column3-center,list-column3-center,
+    						 list-column3-center,list-column3-center,list-column3-center"
 				             >
 				  	  
 				  <h:column>
@@ -41,11 +45,11 @@
 				    <h:outputText value="#{labRoom.computerNum}"/>
 				  </h:column>
 				  
-				  <h:column>
-				    <f:facet name="header">
-				      <h:outputText value="状态"/>
+				   <h:column>
+				     <f:facet name="header">
+				      <h:outputText value="当前人数"/>
 				    </f:facet>
-				    <h:outputText value="#{labRoom.status}"/>
+				    <h:outputText value="11"/>
 				  </h:column>
 				  
 				  <h:column>
@@ -59,7 +63,7 @@
 				   <f:facet name="header">
 				      <h:outputText value="进入"/>
 				    </f:facet>
-				    <a href="stu_computerManager.faces"><h:commandLink value="进入"/></a>
+				    <h:commandLink value="进入" action="#{studentBean.getInLabroom}"/>
 				  </h:column>
 				  
 				</h:dataTable> 

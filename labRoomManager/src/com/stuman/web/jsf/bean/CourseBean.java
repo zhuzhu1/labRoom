@@ -18,7 +18,7 @@ import com.stuman.dao.StudentDAO;
 import com.stuman.dao.hibernate.HibernateUtil;
 import com.stuman.domain.Course;
 import com.stuman.domain.Student;
-import com.stuman.dto.CourseDto;
+
 
 public class CourseBean {
 

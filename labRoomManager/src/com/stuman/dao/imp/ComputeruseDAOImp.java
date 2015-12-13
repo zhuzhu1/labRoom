@@ -10,6 +10,7 @@ import org.hibernate.Session;
 
 import com.stuman.dao.hibernate.HibernateUtil;
 import com.stuman.domain.Computeruse;
+import com.stuman.domain.Student;
 
 public class ComputeruseDAOImp implements ComputeruseDAO{
 	
@@ -30,5 +31,41 @@ public class ComputeruseDAOImp implements ComputeruseDAO{
 			log.fatal(e);
 		}
 		return null;
+	}
+	
+	public List getOnlineComputerUseById(String id) {
+		// TODO Auto-generated method stub
+		try {
+			Session s = HibernateUtil.currentSession();
+			HibernateUtil.beginTransaction();
+			List results = s.createQuery("from Computeruse comuse where stuId = "+ id + " and endTime is null").list();
+			HibernateUtil.commitTransaction();
+			HibernateUtil.closeSession();
+			if (results != null && results.size() > 0) {
+				return results;
+			}
+		} catch (HibernateException e) {
+			log.fatal(e);
+		}
+		return null;
+		
+	}
+	
+	public List getHistoryComputerUseById(String id) {
+		// TODO Auto-generated method stub
+		try {
+			Session s = HibernateUtil.currentSession();
+			HibernateUtil.beginTransaction();
+			List results = s.createQuery("from Computeruse comuse where stuId = "+ id + " and endTime is not null").list();
+			HibernateUtil.commitTransaction();
+			HibernateUtil.closeSession();
+			if (results != null && results.size() > 0) {
+				return results;
+			}
+		} catch (HibernateException e) {
+			log.fatal(e);
+		}
+		return null;
+		
 	}
 }

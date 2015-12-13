@@ -10,60 +10,68 @@
 		.evenRow {background-color: lightblue}
 		</style>
 		<link href="css/table.css" rel="stylesheet" type="text/css"> 
-		<title>上机信息</title>
+		<title>课程</title>
 	</head>
  
 	<body  background="images/image-top2.jpg" style="background-repeat:no-repeat">
-
 		<center>
-			<br><br><br><br><br><br><br><br>在线模块
+			<br><br><br><br><br><br><br><br>所有课程
 		</center>
+
 		<div align="center">
 			<f:view>
 			<h:form>
 				<h:dataTable id="items" 
-				             value="#{studentBean.onlineComputeruses}" 
-				             var="computeruse"
+				             value="#{courseBean.courses}" 
+				             var="course"
 							 styleClass="order-table"
     						 headerClass="order-table-header"
     						 rowClasses="order-table-odd-row,order-table-even-row"
-    						 columnClasses="list-column1-center,list-column1-center,
-    						 list-column2-center,list-column1-center"
-							 
+    						 columnClasses="list-column3-center,list-column3-center,
+    						 list-column3-center,list-column3-center,list-column3-center"
 				             >
+				  <h:column>
+				    <f:facet name="header">
+				      <h:outputText value="课程编号"/>
+				    </f:facet>
+				    <h:outputText value="#{course.id}"/>
+				  </h:column>
 				  	  
 				  <h:column>
 				    <f:facet name="header">
-				      <h:outputText value="实验室号"/>
+				      <h:outputText value="课程名称"/>
 				    </f:facet>
-				    <h:outputText value="#{computeruse.id.roomId}"/>
+				    <h:outputText value="#{course.name}"/>
 				  </h:column>
 				  
 				  <h:column>
 				     <f:facet name="header">
-				      <h:outputText value="电脑编号"/>
+				      <h:outputText value="院系编号"/>
 				    </f:facet>
-				    <h:outputText value="#{computeruse.id.computerId}"/>
+				    <h:outputText value="#{course.departmentId}"/>
 				  </h:column>
 				  
 				   <h:column>
 				    <f:facet name="header">
-				      <h:outputText value="上机时间"/>
+				      <h:outputText value="学分"/>
 				    </f:facet>
-				    <h:outputText value="#{computeruse.id.startTime}"/>
+				    <h:outputText value="#{course.credit}"/>
 				  </h:column>
+				
 				  <h:column>
 				    <f:facet name="header">
-				      <h:outputText value="账户余额"/>
+				      <h:outputText value="上课人数"/>
 				    </f:facet>
-				    <h:outputText value="100"/>
+				    <h:outputText value="#{course.stuNumber}"/>
 				  </h:column>
+	               
+	
 				</h:dataTable> 
 					</h:form>		
     </f:view>
 		</div>
 		<p align="center">
 		</p>
-		<a href="stu_useComputer.faces">&lt;&lt;Back </a>
+		<a href="stu_courseManager.faces">&lt;&lt;Back </a>
 	</body>
 </html>

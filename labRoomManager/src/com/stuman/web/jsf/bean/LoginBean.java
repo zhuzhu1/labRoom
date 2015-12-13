@@ -36,7 +36,7 @@ public class LoginBean {
 	private String username;
 	
 	private String localip;
-
+	private String stuid;
 	// --------------------------------------------------------- Methods
 	public String login(){
 		
@@ -87,8 +87,8 @@ public class LoginBean {
 		try {
 			HibernateUtil.beginTransaction();
 			String str = new String();
-			String strip = new String();
-			strip = " from Computer as com where com.ip=:comIp";
+			//String strip = new String();
+			//strip = " from Computer as com where com.ip=:comIp";
 			
 			switch (loginSort) {
 			case 1:
@@ -100,10 +100,13 @@ public class LoginBean {
 				query.setString("stuPassword", password);
 				if (query.list().size() > 0) {
 					session.setAttribute("stuid", ((Student) query.list().get(0)).getId());
+					stuid=((Student) query.list().get(0)).getId();
 					//根据IP，将电脑置为被占用状态
-					//modifyComputer();
-					s.close();
-					return "studentLoginsuccess";
+					if(modifyComputer(((Student) query.list().get(0)).getId()))
+					{
+						s.close();
+						return "studentLoginsuccess";
+					}
 				} else
 					break;
 			case 2:
@@ -140,7 +143,7 @@ public class LoginBean {
 		return null;
 	}
 
-	public String modifyComputer(){
+	public boolean modifyComputer(String stuId){
 
 //		JSF获取session
 		FacesContext context = FacesContext.getCurrentInstance(); 
@@ -148,16 +151,54 @@ public class LoginBean {
 		HttpSession session = (HttpSession) ec.getSession(true); 
 		
 		ComputerDAO comDao = DAOFactory.getInstance().createComputerDAO();
-		Computer com = comDao.getComnputerByIP(localip);
-		com.setStatus("0");
-		if(comDao.updateComputer(com)){
+		//Computer com = comDao.getComnputerByIP(localip);
+		//com.setStatus("0");
+		if(comDao.updateComputer(stuId,localip)){
 			session.setAttribute("msg", "修改状态成功！");
-			return "success";
+			return true;
+		}	
+		
+		return false;
+	}
+	
+	public boolean exitFun(){
+
+//		JSF获取session
+		FacesContext context = FacesContext.getCurrentInstance(); 
+		ExternalContext ec = context.getExternalContext(); 
+		HttpSession session = (HttpSession) ec.getSession(true); 
+		
+		ComputerDAO comDao = DAOFactory.getInstance().createComputerDAO();
+		//Computer com = comDao.getComnputerByIP(localip);
+		//com.setStatus("0");
+		if(comDao.exitFun(stuid,localip)){
+			session.setAttribute("msg", "修改状态成功！");
+			return true;
+		}	
+		
+		return false;
+	}
+	
+	/*public String addComUseRecord(){
+        //JSF获取session
+		FacesContext context = FacesContext.getCurrentInstance(); 
+		ExternalContext ec = context.getExternalContext(); 
+		HttpSession session = (HttpSession) ec.getSession(true); 
+		//获得DAO实例
+		stuDao = this.getStudentDAO();
+		if(this.password == "" || this.student.getPassword() == "" || !this.password.equals(this.student.getPassword()))
+		{
+			session.setAttribute("msg", "密码为空，两次输入密码不一样！");
+			return null;
+		}
+		if(stuDao.updateStudent(getStudent())){
+			session.setAttribute("msg", "密码修改成功！");
+			return null;
 		}	
 		
 		return null;
 	}
-	
+	*/
 	/**
 	 * Returns the password.
 	 * 

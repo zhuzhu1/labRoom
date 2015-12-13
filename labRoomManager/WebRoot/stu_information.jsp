@@ -9,35 +9,30 @@
 		.oddRow {background-color: gray}
 		.evenRow {background-color: lightblue}
 		</style>
+		<link href="css/table.css" rel="stylesheet" type="text/css"> 
 		<title>学生</title>
 	</head>
- 
-	<body  background="images/image-top2.jpg" style="background-repeat:no-repeat">
-		<%/*
-		String admin_id = (String) session.getAttribute("id");
-			if (admin_id == null) {
-				response.sendRedirect("login.faces");
-			}
 
-			int mark = 0;
-*/
-			%>
+	<body  background="images/image-top2.jpg" style="background-repeat:no-repeat">
 		<center>
 			<br><br><br><br><br><br><br><br>基本信息
 		</center>
-
-		<div align="center" style="width: 90%">
+		<div align="center">
 			<f:view>
 			<h:form>
-			<p align=right>
+
 			   <h:commandLink value="密码修改" action="#{studentBean.preModifyStudent}"/>
-			</p>
+
 				<h:dataTable id="items" 
-				             value="#{studentBean.students}" 
+				             value="#{studentBean.oneStudents}" 
 				             var="student"
-							 border="1"
-							 width="65%"
-				             >
+				             styleClass="order-table"
+    						 headerClass="order-table-header"
+    						 rowClasses="order-table-odd-row,order-table-even-row"
+    						 columnClasses="list-column1-center,list-column1-center,list-column1-center,
+    						 list-column1-center,list-column1-center,list-column2-center"
+							 >
+				             
 				  <h:column>
 				    <f:facet name="header">
 				      <h:outputText value="学号"/>
@@ -84,8 +79,6 @@
 					</h:form>		
     </f:view>
 		</div>
-		<p align="center">
-		</p>
 		<a href="stu_userManager.faces">&lt;&lt;Back </a>
 	</body>
 </html>

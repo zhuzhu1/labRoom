@@ -16,7 +16,6 @@ public class LabRoomBean {
 	private String id;
 	private String capacity;
 	private String computerNum;
-	private String status;
 	private String cost;
 	
 	private LabroomDAO labroomDao;
@@ -72,12 +71,7 @@ public class LabRoomBean {
 	public void setId(String id) {
 		this.id = id;
 	}
-	public String getStatus() {
-		return status;
-	}
-	public void setStatus(String status) {
-		this.status = status;
-	}
+
 	
 	
 }

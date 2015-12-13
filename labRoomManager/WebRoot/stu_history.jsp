@@ -9,6 +9,7 @@
 		.oddRow {background-color: gray}
 		.evenRow {background-color: lightblue}
 		</style>
+		<link href="css/table.css" rel="stylesheet" type="text/css"> 
 		<title>上机信息</title>
 	</head>
  
@@ -21,10 +22,13 @@
 			<f:view>
 			<h:form>
 				<h:dataTable id="items" 
-				             value="#{computeruseBean.computeruses}" 
+				             value="#{studentBean.historyComputeruses}" 
 				             var="computeruse"
-							 border="1"
-							 width="75%"
+							 styleClass="order-table"
+    						 headerClass="order-table-header"
+    						 rowClasses="order-table-odd-row,order-table-even-row"
+    						 columnClasses="list-column1-center,list-column1-center,list-column2-center,
+    						 list-column2-center,list-column1-center,list-column1-center,list-column1-center"
 				             >
 				  	  
 				  <h:column>
@@ -67,6 +71,13 @@
 				      <h:outputText value="花费"/>
 				    </f:facet>
 				    <h:outputText value="#{computeruse.id.cost}"/>
+				  </h:column>
+				  
+				  <h:column>
+				    <f:facet name="header">
+				      <h:outputText value="账户余额"/>
+				    </f:facet>
+				    <h:outputText value="88"/>
 				  </h:column>
 				  
 				</h:dataTable> 

@@ -29,4 +29,21 @@ public class RechargeListDAOImp implements RechargeListDAO{
 		}
 		return null;
 	}
+	
+	public List getRechargeListById(String id) {
+		// TODO Auto-generated method stub
+		try {
+			Session s = HibernateUtil.currentSession();
+			HibernateUtil.beginTransaction();
+			List results = s.createQuery("from Rechargelist rechaList where stuId = " + id).list();
+			HibernateUtil.commitTransaction();
+			HibernateUtil.closeSession();
+			if (results != null && results.size() > 0) {
+				return results;
+			}
+		} catch (HibernateException e) {
+			log.fatal(e);
+		}
+		return null;
+	}
 }

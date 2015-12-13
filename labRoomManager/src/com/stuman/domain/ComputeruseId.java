@@ -30,6 +30,15 @@ public class ComputeruseId implements java.io.Serializable {
 	public ComputeruseId() {
 	}
 
+	/** minimal constructor */
+	public ComputeruseId(String stuId, String roomId, String computerId,
+			Date startTime) {
+		this.stuId = stuId;
+		this.roomId = roomId;
+		this.computerId = computerId;
+		this.startTime = startTime;
+	}
+
 	/** full constructor */
 	public ComputeruseId(String stuId, String roomId, String computerId,
 			Date startTime, Date endTime, Double duration, Double cost) {

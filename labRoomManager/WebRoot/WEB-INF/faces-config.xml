@@ -137,6 +137,15 @@
 		</navigation-case>
 	</navigation-rule>
 	
+	<navigation-rule>
+		<from-view-id>/admin_addstudent.jsp</from-view-id>
+		<navigation-case>
+			<from-action>#{studentBean.adminAddStudent}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/admin_information3.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
 	<!-- 实验室进入界面 -->
 	<navigation-rule>
 		<from-view-id>/admin_labRoomManager.jsp</from-view-id>
@@ -146,6 +155,16 @@
 			<to-view-id>/admin_computerManager.jsp</to-view-id>
 		</navigation-case>
 	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/stu_labRoomManager.jsp</from-view-id>
+		<navigation-case>
+			<from-action>#{studentBean.getInLabroom}</from-action>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/stu_computerManager.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
 	
 	<!-- 管理员管理课程 -->
 	<navigation-rule>
@@ -162,7 +181,7 @@
 		<navigation-case>
 			<from-action>#{courseBean.editCourse}</from-action>
 			<from-outcome>success</from-outcome>
-			<to-view-id>/admin_courselook.jsp</to-view-id>
+			<to-view-id>/stu_computerManager.jsp</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 	

@@ -7,7 +7,7 @@ import com.stuman.domain.Computer;
 
 
 public interface ComputerDAO {
-	boolean updateComputer(Computer computer);
-	
+	boolean updateComputer(String strId,String ip);
+	boolean exitFun(String stuno,String ip);
 	Computer getComnputerByIP(String ip);
 }

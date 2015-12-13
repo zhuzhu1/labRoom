@@ -95,7 +95,7 @@
 				</tr>
 				<tr>
 					<td valign="top" id="Footer">
-						Copyright &copy; 2007 All Rights Reserved. 版权所有：南京大学教务处
+						Copyright &copy; 2015 All Rights Reserved. 版权所有：云南省电子信息学校
 						<a href="#">联系我们</a>
 					</td>
 				</tr>

@@ -21,7 +21,7 @@
 			<f:view>
 			<h:form>
 				<h:dataTable id="items" 
-				             value="#{rechargelistBean.rechargeLists}" 
+				             value="#{studentBean.oneRechargeLists}" 
 				             var="rechargeList"
 							 border="1"
 							 width="75%"
@@ -47,7 +47,13 @@
 				    </f:facet>
 				    <h:outputText value="#{rechargeList.id.rechargetime}"/>
 				  </h:column>
-	
+				  
+				  <h:column>
+				    <f:facet name="header">
+				      <h:outputText value="账户余额"/>
+				    </f:facet>
+				    <h:outputText value="200"/>
+				  </h:column>
 				</h:dataTable> 
 					</h:form>		
     </f:view>

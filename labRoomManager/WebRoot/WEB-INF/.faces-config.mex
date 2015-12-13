@@ -5,14 +5,18 @@
   <JSFFlowResource path="/student.jsp" location="300,20" dimension="116,36" />
   <JSFFlowResource path="/admin.jsp" location="300,120" dimension="104,36" />
   <JSFFlowResource path="/teacher.jsp" location="300,200" dimension="116,36" />
-  <JSFFlowResource path="/stu_information.jsp" location="480,130" dimension="158,36" />
-  <JSFFlowResource path="/stu_passwordModify.jsp" location="480,230" dimension="189,36" />
+  <JSFFlowResource path="/stu_information.jsp" location="480,130" dimension="201,36" />
+  <JSFFlowResource path="/stu_passwordModify.jsp" location="480,230" dimension="201,36" />
   <JSFFlowResource path="/admin_information2.jsp" location="30,230" dimension="184,36" />
   <JSFFlowResource path="/admin_passwordModify.jsp" location="30,330" dimension="208,36" />
-  <JSFFlowResource path="/admin_information3.jsp" location="330,330" dimension="184,36" />
-  <JSFFlowResource path="/admin_updatestudent.jsp" location="30,430" dimension="194,36" />
-  <JSFFlowResource path="/admin_labRoomManager.jsp" location="330,430" dimension="216,36" />
-  <JSFFlowResource path="/admin_computerManager.jsp" location="30,530" dimension="219,36" />
+  <JSFFlowResource path="/admin_information3.jsp" location="520,320" dimension="184,36" />
+  <JSFFlowResource path="/admin_updatestudent.jsp" location="300,420" dimension="194,36" />
+  <JSFFlowResource path="/admin_labRoomManager.jsp" location="660,440" dimension="216,36" />
+  <JSFFlowResource path="/admin_computerManager.jsp" location="60,540" dimension="219,36" />
+  <JSFFlowResource path="/stu_labRoomManager.jsp" location="330,630" dimension="197,36" />
+  <JSFFlowResource path="/stu_computerManager.jsp" location="30,730" dimension="200,36" />
+  <JSFFlowResource path="/admin_courselook.jsp" location="680,620" dimension="175,36" />
+  <JSFFlowResource path="/admin_updatecourse.jsp" location="30,630" dimension="190,36" />
   <JSFFlowNavigationCase id="/login.jsp,/student.jsp,studentLoginsuccess,null" routingType="0">
     <AutomaticBendpoints>
       <AbsolutePoint location="112,120" />
@@ -35,8 +39,8 @@
   </JSFFlowNavigationCase>
   <JSFFlowNavigationCase id="/stu_information.jsp,/stu_passwordModify.jsp,success,#{studentBean.preModifyStudent}" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="559,166" />
-      <AbsolutePoint location="559,230" />
+      <AbsolutePoint location="580,166" />
+      <AbsolutePoint location="580,230" />
     </AutomaticBendpoints>
   </JSFFlowNavigationCase>
   <JSFFlowNavigationCase id="/admin_information2.jsp,/admin_passwordModify.jsp,success,#{adminBean.preModifyAdmin}" routingType="0">
@@ -47,25 +51,43 @@
   </JSFFlowNavigationCase>
   <JSFFlowNavigationCase id="/admin_information3.jsp,/admin_updatestudent.jsp,success,#{studentBean.adminPreUpdateStudent}" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="422,366" />
-      <AbsolutePoint location="422,403" />
-      <AbsolutePoint location="127,403" />
-      <AbsolutePoint location="127,430" />
+      <AbsolutePoint location="612,356" />
+      <AbsolutePoint location="612,432" />
+      <AbsolutePoint location="494,432" />
     </AutomaticBendpoints>
   </JSFFlowNavigationCase>
   <JSFFlowNavigationCase id="/admin_updatestudent.jsp,/admin_information3.jsp,success,#{studentBean.adminEditStudent}" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="224,448" />
-      <AbsolutePoint location="271,448" />
-      <AbsolutePoint location="271,348" />
-      <AbsolutePoint location="330,348" />
+      <AbsolutePoint location="397,420" />
+      <AbsolutePoint location="397,338" />
+      <AbsolutePoint location="520,338" />
     </AutomaticBendpoints>
   </JSFFlowNavigationCase>
   <JSFFlowNavigationCase id="/admin_labRoomManager.jsp,/admin_computerManager.jsp,success,#{labRoomBean.getIn}" routingType="0">
     <AutomaticBendpoints>
-      <AbsolutePoint location="438,466" />
-      <AbsolutePoint location="438,548" />
-      <AbsolutePoint location="249,548" />
+      <AbsolutePoint location="768,476" />
+      <AbsolutePoint location="768,558" />
+      <AbsolutePoint location="279,558" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id="/stu_labRoomManager.jsp,/stu_computerManager.jsp,success,#{studentBean.getInLabroom}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="428,666" />
+      <AbsolutePoint location="428,748" />
+      <AbsolutePoint location="230,748" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id="/admin_courselook.jsp,/admin_updatecourse.jsp,success,#{courseBean.preEditCourse}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="680,622" />
+      <AbsolutePoint location="125,622" />
+      <AbsolutePoint location="125,630" />
+    </AutomaticBendpoints>
+  </JSFFlowNavigationCase>
+  <JSFFlowNavigationCase id="/admin_updatecourse.jsp,/stu_computerManager.jsp,success,#{courseBean.editCourse}" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="125,666" />
+      <AbsolutePoint location="125,730" />
     </AutomaticBendpoints>
   </JSFFlowNavigationCase>
 </JSFFlowViewLayout>

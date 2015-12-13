@@ -32,7 +32,7 @@
 	padding-left: 1px;
 	padding-right: 1px;
 	border:1px;
-	word-break: keep-all;/*寮哄埗涓嶆崲琛�銆佹崲琛宐reak-all*/
+	word-break: keep-all;
 }
 .TABLE_TH2
 {
@@ -48,51 +48,86 @@
 	padding-left: 1px;
 	padding-right: 1px;
 	border:1px;
-	word-break: keep-all;/*寮哄埗涓嶆崲琛�銆佹崲琛宐reak-all*/
+	word-break: keep-all;
 }
 
 
 .TABLE_TR_01
 {
-	background-color: #f2faf3;
+	background-color: #ddf0fb;
 	font-style: normal;
 	vertical-align: bottom;
 	text-align: left;
-	word-break: keep-all;/*寮哄埗涓嶆崲琛�/
+	word-break: keep-all;
 	height: 25px;
 	border:1px;
 }
 
 .TABLE_TR_02
 {
-	background-color: #ddf0fb;
+	background-color: #f2faf3;
 	font-style: normal;
 	vertical-align: bottom;
 	text-align: left;
-	word-break: keep-all;/*寮哄埗涓嶆崲琛�/
+	word-break: keep-all;
 	height: 25px;
 	border:1px;
 }
 
 .TABLE_TD_01
 {
-	background-color: #f2faf3;
-	font-style: normal;
-	vertical-align: bottom;
-	text-align: left;
-	word-break: keep-all;/*寮哄埗涓嶆崲琛�/
-}
-
-.TABLE_TD_02
-{
 	background-color: #ddf0fb;
 	font-style: normal;
 	vertical-align: bottom;
 	text-align: left;
-	word-break: keep-all;/*寮哄埗涓嶆崲琛�/
+	word-break: keep-all;
+}
+
+.TABLE_TD_02
+{
+	background-color: #f2faf3;
+	font-style: normal;
+	vertical-align: bottom;
+	text-align: left;
+	word-break: keep-all;
 }
 
 
+.order-table{   
+	border-collapse:collapse;
+}
+
+.order-table-header{
+	text-align:center;
+	background:none repeat scroll 0 0 #E5E5E5;
+	border-bottom:1px solid #BBBBBB;
+	padding:16px;
+}
+
+.order-table-odd-row{
+	text-align:center;
+	background:none repeat scroll 0 0 #FFFFFFF;
+	border-top:1px solid #BBBBBB;
+}
+
+.order-table-even-row{
+	text-align:center;
+	background:none repeat scroll 0 0 #F9F9F9;
+	border-top:1px solid #BBBBBB;
+}
+.list-column1-center {
+  text-align: center;
+  width: 100px;
+}
+.list-column2-center {
+  text-align: center;
+  width: 200px;
+}
+
+.list-column3-center {
+  text-align: center;
+  width: 150px;
+}
 
 .COLOR_TABLE_TR_01
 {
@@ -117,7 +152,7 @@
 }
 .TEXT_TITLE
 {
-	font-family:"瀹嬩綋";/**"妤蜂綋_GB2312";**/
+	font-family:"Times New Roman",Georgia,Serif;
 	font-size: 14px;
 	font-weight: bold;
 	background-image: url(../images/TAB_BG_UNSELECTED.jpg);
@@ -128,7 +163,7 @@
 
 .TAB_SELECTED
 {
-	font-family:"瀹嬩綋";/**"妤蜂綋_GB2312";**/
+	font-family:"Times New Roman",Georgia,Serif;
 	font-size: 14px;
 	font-weight: bold;
 	background: #E6EDF5;
@@ -138,7 +173,7 @@
 
 .TAB_UNSELECTED
 {
-	font-family:"瀹嬩綋";/**"妤蜂綋_GB2312";**/
+	font-family:"Times New Roman",Georgia,Serif;
 	font-size: 14px;
 	font-weight: bold;
 	color: #0066CC;
