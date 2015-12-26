@@ -133,7 +133,7 @@ public class StudentBean  {
         return dataModel;
     }
     
-    public DataModel getOneStudents() {
+    public DataModel getStudentById() {
 //    	JSFªÒ»°session
 		FacesContext context = FacesContext.getCurrentInstance(); 
 		ExternalContext ec = context.getExternalContext(); 

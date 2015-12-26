@@ -72,6 +72,12 @@ public class StudentDAOImp implements StudentDAO {
 			Session s = HibernateUtil.currentSession();
 			HibernateUtil.beginTransaction();
 			s.update(student);
+			String passwd="";
+			String StuId="";
+			
+			s.createQuery("update Student set password = '"+ passwd 
+					+ "' where id ='" + StuId+"'").executeUpdate();
+			
 			System.out.println("update student id =" + student.getId());
 			HibernateUtil.commitTransaction();
 			HibernateUtil.closeSession();

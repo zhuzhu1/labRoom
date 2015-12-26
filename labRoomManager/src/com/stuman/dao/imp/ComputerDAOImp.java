@@ -33,6 +33,7 @@ public class ComputerDAOImp implements ComputerDAO{
 				return false;
 			}
 			s.createQuery("update Computer set status = '0' where ip='" + ip+"'").executeUpdate();
+			
 			System.out.println("update computer ip =" +((Computer)results.get(0)).getIp());
 			
 			//新增上机记录
@@ -43,6 +44,7 @@ public class ComputerDAOImp implements ComputerDAO{
 					+((Computer)results.get(0)).getLabroom().getId()+"','"
 					+((Computer)results.get(0)).getId().getId()+"',"
 					+df.format(new Date())+")");
+			
 			System.out.println("insert into Computeruse success");
 			HibernateUtil.commitTransaction();
 			HibernateUtil.closeSession();
