@@ -102,11 +102,11 @@ public class LoginBean {
 					session.setAttribute("stuid", ((Student) query.list().get(0)).getId());
 					stuid=((Student) query.list().get(0)).getId();
 					//根据IP，将电脑置为被占用状态
-					if(modifyComputer(((Student) query.list().get(0)).getId()))
-					{
+					//if(modifyComputer(((Student) query.list().get(0)).getId()))
+					//{
 						s.close();
 						return "studentLoginsuccess";
-					}
+					//}
 				} else
 					break;
 			case 2:
